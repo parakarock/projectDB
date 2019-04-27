@@ -38,6 +38,27 @@ class HomeController extends Controller
        return view('home.all',compact('data'));
     }
 
+    public function search($id)
+    {
+        $data = DB::table('Car')
+                ->join('Brand','Brand.Brand_ID','=','Car.Brand')
+                ->select('Car.Car_Licence','Car.Car_Color','Brand.Brand_Name')
+                ->where('Car.Car_Licence',$id)
+                ->get();
+            
+       return view('home.welcome',compact('data'));
+    }
+     public function search2($id)
+    {
+        $data = DB::table('Car')
+                ->join('Brand','Brand.Brand_ID','=','Car.Brand')
+                ->select('Car.Car_Licence','Car.Car_Color','Brand.Brand_Name')
+                ->where('Car.Car_Licence',$id)
+                ->get();
+            
+       return view('home.all',compact('data'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
