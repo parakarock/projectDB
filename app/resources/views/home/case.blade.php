@@ -1,10 +1,10 @@
 @extends('layouts.app') 
 @section('head')
 <li class="nav-item active">
-    <a class="nav-link" href="#">หน้าแรก</a>
+    <a class="nav-link" href="/">หน้าแรก</a>
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="#">แจ้งความ
+    <a class="nav-link" href="/case">แจ้งความ
         <span class="sr-only">(current)</span>
     </a>
 </li>

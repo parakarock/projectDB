@@ -6,7 +6,7 @@
     </a>
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="case">แจ้งความ</a>
+    <a class="nav-link" href="/case">แจ้งความ</a>
 </li>
 @endsection
  
@@ -42,7 +42,7 @@
                     <div class="col-6 col-md-2">
                         <div class="text-right">
                             <br>
-                            <button type="button" class="btn btn-primary" style="width:110px;height:50px">All</button>
+                            <input type="button" value="All" class="btn btn-primary" style="width:110px;height:50px" onclick="window.location.href='/all'">
                         </div>
                     </div>
                 </div>
