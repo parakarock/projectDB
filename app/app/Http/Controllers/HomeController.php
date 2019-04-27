@@ -78,15 +78,35 @@ class HomeController extends Controller
      */
     public function edit($id)
     {
-        $data1 = DB::table('Car')->join('Brand','Brand.Brand_ID','=','Car.Brand')
-                ->select('Car.Car_Licence','Car.Car_Color','Brand.Brand_Name')
+        $data = DB::table('Car')
+                ->join('Brand','Brand.Brand_ID','=','Car.Brand')
+                ->join('Users','Users.User_Citizen','=','Car.User')
+                ->select('Car.Car_Licence',
+                        'Car.Car_Color',
+                        'Brand.Brand_Name',
+                        'Brand.Brand_Genaration',
+                        'Brand.Brand_Year',
+                        'Brand.Brand_Type',
+                        'Brand.Brand_Motor',
+                        'Brand.Brand_Gas',
+                        'Users.User_Citizen',
+                        'Users.User_Name',
+                        'Users.User_Lname',
+                        'Users.User_BirthDay',
+                        'Users.User_Country',
+                        'Users.User_Province',
+                        'Users.User_Post',
+                        'Users.User_Address')
+                ->where('Car.Car_Licence',$id)
                 ->get();
-        $data2 = DB::table('Brand')->get();
-        $data = compact('data1','data2');
+        $case = DB::table('Case')
+                ->join('Car','Car.Car_Licence','=','Case.OwnerCar')
+                ->select('Case.Case_Detail',
+                        'Case.Case_Date')
+                ->where('Case.OwnerCar',$id)
+                ->get();
 
-        echo "<pre>";
-        print_r($data);
-        // return view('home.detail');
+        return view('home.detail',compact('data','case'));
     }
 
     /**
