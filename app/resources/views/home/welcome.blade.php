@@ -15,7 +15,11 @@
     <div class="row">
         <div class="col-lg-12 text-center">
             <h1 class="mt-5">ค้นหาเจ้าของรถ</h1>
+            
             <p class="lead">-------------------------------------------------------------</p>
+            <div class="containe">
+            <div class="row">
+            <div class="col-12 col-sm-6 col-md-10">
             <form class="card card-sm">
                 <div class="card-body row no-gutters align-items-center">
                     <div class="col-auto">
@@ -32,6 +36,19 @@
                     <!--end of col-->
                 </div>
             </form>
+            </div>
+            
+            <div class="col-6 col-md-2">
+            <div class="text-right">
+  	            <br>
+                <button type="button" class="btn btn-primary" style="width:110px;height:50px">All</button>
+            </div>
+            </div> 
+        </div>
+        </div>
+    
+            
+            
             <table class="table">
                 <thead>
                     <tr>
