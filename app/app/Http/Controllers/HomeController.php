@@ -105,8 +105,8 @@ class HomeController extends Controller
                         'Case.Case_Date')
                 ->where('Case.OwnerCar',$id)
                 ->get();
-        return ($data) 
-        //return view('home.detail',compact('data','case'));
+
+        return view('home.detail',compact('data','case'));
     }
 
     /**
