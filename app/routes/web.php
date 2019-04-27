@@ -15,3 +15,4 @@ Route::resource('home','HomeController');
 Auth::routes();
 
 Route::get('/','HomeController@index');
+Route::get('all','HomeController@index2');
