@@ -4,7 +4,7 @@
     <a class="nav-link" href="#">หน้าแรก</a>
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="{{ route('case.store') }}">แจ้งความ
+    <a class="nav-link" href="#">แจ้งความ
         <span class="sr-only">(current)</span>
     </a>
 </li>
@@ -17,8 +17,8 @@
             <h1 class="mt-5">แจ้งความ</h1>
             <p class="lead">-------------------------------------------------------------</p>
             <div class="panel-heading">
-                <form method="post" action="{{ route('case.store') }}">
-                    {{ csrf_field()}}
+                <form method="post" action="">
+
                     <div class="form-group">
                         <label for="Car_Licence">ทะเบียนรถยนต์</label>
                         <input type="text" name="Car_Licence" class="form-control">
@@ -45,7 +45,7 @@
                     </div>
 
                     <button type="submit" class="btn btn-success">ตกลง</button>
-
+                </form>
             </div>
 
         </div>

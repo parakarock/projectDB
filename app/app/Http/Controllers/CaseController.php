@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class SearchCar extends Controller
+use DB;
+
+class CaseController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +15,7 @@ class SearchCar extends Controller
      */
     public function index()
     {
-        return view("home.case");
+        return view('home.case');
     }
 
     /**
