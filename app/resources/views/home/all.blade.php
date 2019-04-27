@@ -1,12 +1,12 @@
 @extends('layouts.app') 
 @section('head')
 <li class="nav-item active">
-    <a class="nav-link" href="/">หน้าแรก
+    <a class="nav-link" href="#">หน้าแรก
         <span class="sr-only">(current)</span>
     </a>
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="/case">แจ้งความ</a>
+    <a class="nav-link" href="#">แจ้งความ</a>
 </li>
 @endsection
  
@@ -43,7 +43,7 @@
                     <div class="col-6 col-md-2">
                         <div class="text-right">
                             <br>
-                            <button type="button" class="btn btn-primary" style="width:110px;height:50px" href="/all">All</button>
+                            <button type="button" class="btn btn-primary" style="width:110px;height:50px">All</button>
                         </div>
                     </div>
                 </div>
@@ -73,6 +73,7 @@
                         <td>{{ $row->Car_Color }}</td>
                         <td>{{ $row->Brand_Name }}</td>
                         <td><a href="{{ route('home.edit',$row->Car_Licence) }}" class="btn btn-warning">Edit</a></td>
+                        <td><a href="{{ route('home.update',$row->Car_Licence) }}" class="btn btn-secondary">Transfer</a></td>
                         <td>
                             <form action="{{ route('home.destroy',$row->Car_Licence) }}" method="post">
                                 @csrf @method("DELETE")
@@ -106,6 +107,7 @@
                         <td>{{ $row->Car_Color }}</td>
                         <td>{{ $row->Brand_Name }}</td>
                         <td><a href="{{ route('home.edit',$row->Car_Licence) }}" class="btn btn-warning">Edit</a></td>
+                        <td><a href="{{ route('home.update',$row->Car_Licence) }}" class="btn btn-secondary">Transfer</a></td>
                         <td>
                             <form action="{{ route('home.destroy',$row->Car_Licence) }}" method="post">
                                 @csrf @method("DELETE")

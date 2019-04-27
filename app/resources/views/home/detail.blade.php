@@ -30,7 +30,7 @@
             <br>
             <p class="lead">-------------------------------------------------------------</p>
             <h1>ข้อมูลเจ้าของรถ</h1>
-            <p class="text-left">ทะเบียนรถยนต์ : {{ $value->User_Citizen }}</p>
+            <p class="text-left">เลขประจำตัวประชาชน : {{ $value->User_Citizen }}</p>
             <p class="text-left">ชื่อ : {{ $value->User_Name }}</p>
             <p class="text-left">นามสกุล : {{ $value->User_Lname }}</p>
             <p class="text-left">วันเกิด : {{ $value->User_BirthDay }}</p>
