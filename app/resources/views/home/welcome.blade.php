@@ -6,7 +6,7 @@
     </a>
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="#">แจ้งความ</a>
+    <a class="nav-link" href="{{ route('home.case') }}">แจ้งความ</a>
 </li>
 @endsection
  
