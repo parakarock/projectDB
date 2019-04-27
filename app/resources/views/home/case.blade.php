@@ -1,12 +1,12 @@
 @extends('layouts.app') 
 @section('head')
 <li class="nav-item active">
-    <a class="nav-link" href="#">หน้าแรก
-        <span class="sr-only">(current)</span>
-    </a>
+    <a class="nav-link" href="#">หน้าแรก</a>
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="#">แจ้งความ</a>
+    <a class="nav-link" href="{{ route('case.store') }}">แจ้งความ
+        <span class="sr-only">(current)</span>
+    </a>
 </li>
 @endsection
  
@@ -44,10 +44,10 @@
                         <input type="date" name="Case_date" class="form-control">
                     </div>
 
-                        <button type="submit" class="btn btn-success">ตกลง</button>
-               
-                </div>
-            
+                    <button type="submit" class="btn btn-success">ตกลง</button>
+
+            </div>
+
         </div>
     </div>
 </div>

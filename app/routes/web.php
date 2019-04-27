@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::resource('case','CaseController');
 Route::resource('home','HomeController');
 Auth::routes();
 
@@ -18,5 +18,5 @@ Route::get('/','HomeController@index');
 
 Route::get('all','HomeController@index2');
 
-Route::get('case','CaseController@index');
+
 
