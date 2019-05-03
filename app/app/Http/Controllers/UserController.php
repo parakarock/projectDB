@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Car;
+use App\users;
 use DB;
 
-class CarController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class CarController extends Controller
      */
     public function index()
     {
-       // 
+        //
     }
 
     /**
@@ -25,14 +25,7 @@ class CarController extends Controller
      */
     public function create()
     {
-        $users = DB::table('Users')
-                ->select('User_Citizen')
-                ->get();
-        $brands = DB::table('Brand')
-                ->select('Brand_ID','Brand_Name')
-                ->get();
-
-       return view('home.insert',compact('users','brands'));
+        //
     }
 
     /**
@@ -41,34 +34,39 @@ class CarController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    
     public function store(Request $request)
     {
-         $request->validate(
+        $request->validate(
             [
-                'Car_Licence' => 'required|max:10',
-                'Car_Color' => 'required|max:150',
-                'Car_Outday' => 'required',
-                'Brand' => 'required',
-                'User' => 'required'
-                
+                'User_Citizen' => 'required|max:13',
+                'User_Name' => 'required|max:150',
+                'User_Lname' => 'required|max:100',
+                'User_BirthDay' => 'required',
+                'User_Country' => 'required|max:100',
+                'User_Province' => 'required|max:100',
+                'User_Post' => 'required|max:5',
+                'User_Address' => 'required|max:150'
             ]
             );
+    
+        $owner = new Users;
+        $owner->User_Citizen = $request->get('User_Citizen');
+        $owner->User_Name = $request->get('User_Name');
+        $owner->User_Lname = $request->get('User_Lname');
+        $owner->User_BirthDay = date($request->get('User_BirthDay'));
+        $owner->User_Country = $request->get('User_Country');
+        $owner->User_Province = $request->get('User_Province');
+        $owner->User_Post = $request->get('User_Post');
+        $owner->User_Address = $request->get('User_Address');
+        $owner->save(); 
         
-        $car = new Car;
-        $car->Car_Licence = $request->get('Car_Licence');
-        $car->Car_Color = $request->get('Car_Color');
-        $car->Car_Outday = date($request->get('Car_Outday'));
-        $car->Brand = $request->get('Brand');
-        $car->User = $request->get('User');
-        $car->save();
-
         $data = DB::table('Car')
                 ->join('Brand','Brand.Brand_ID','=','Car.Brand')
                 ->select('Car.Car_Licence','Car.Car_Color','Brand.Brand_Name')
                 ->get();
 
        return view('home.all',compact('data'));
+        
     }
 
     /**
@@ -113,16 +111,6 @@ class CarController extends Controller
      */
     public function destroy($id)
     {
-        // $car = Car::find($Car_Licence->$id);
-        // $car->delete();
-        DB::delete('delete from Car where Car_Licence = ?',[$id]);
-
-        $data = DB::table('Car')
-                ->join('Brand','Brand.Brand_ID','=','Car.Brand')
-                ->select('Car.Car_Licence','Car.Car_Color','Brand.Brand_Name')
-                ->get();
-
-       return view('home.all',compact('data')); 
-        // return $id;
+        //
     }
 }

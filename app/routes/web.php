@@ -13,12 +13,15 @@ use Illuminate\Support\Facades\Input;
 */
 Route::resource('case','CaseController');
 Route::resource('home','HomeController');
+Route::resource('car','CarController');
+Route::resource('user','UserController');
+Route::resource('brand','BrandController');
 Auth::routes();
-
 Route::get('/','HomeController@index');
 
 Route::get('all','HomeController@index2');
 Route::get('case','CaseController@index');
+
 
 Route::any('/search',function(){
     $q = Input::get( 'q' );

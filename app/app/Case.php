@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Case extends Model
 {
+    public $timestamps = false;
     protected $table = 'Case';
     protected $fillable = [
         'Case_ID',

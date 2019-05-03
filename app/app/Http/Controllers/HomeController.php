@@ -77,8 +77,9 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
-        
+        //
     }
+
 
     /**
      * Display the specified resource.
@@ -150,6 +151,6 @@ class HomeController extends Controller
      */
     public function destroy($id)
     {
-        
+        //
     }
 }

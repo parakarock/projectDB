@@ -1,4 +1,8 @@
-@extends('layouts.app') 
+@extends('layouts.app')
+
+
+
+
 @section('head')
 <li class="nav-item active">
     <a class="nav-link" href="/">หน้าแรก
@@ -9,7 +13,15 @@
     <a class="nav-link" href="/case">แจ้งความ</a>
 </li>
 @endsection
- 
+
+
+
+
+
+
+
+
+
 @section('content')
 <div class="container">
     <div class="row">
@@ -19,7 +31,9 @@
 
             <div class="containe">
                 <div class="row">
-                    <div class="col-12 col-sm-6 col-md-10">
+
+
+                    <div class="col-12 col-sm-6 col-md-8">
                         <form action="/search2" method="POST" role="search" class="card card-sm">
                             {{ csrf_field() }}
                             <div class="card-body row no-gutters align-items-center">
@@ -28,7 +42,8 @@
                                 </div>
                                 <!--end of col-->
                                 <div class="col">
-                                    <input class="form-control form-control-lg form-control-borderless" name="q" type="search" placeholder="ทะเบียนรถ">
+                                    <input class="form-control form-control-lg form-control-borderless" name="q"
+                                        type="search" placeholder="ทะเบียนรถ">
                                 </div>
                                 <!--end of col-->
                                 <div class="col-auto">
@@ -43,14 +58,14 @@
                     <div class="col-6 col-md-2">
                         <div class="text-right">
                             <br>
-                            <button type="button" class="btn btn-primary" style="width:110px;height:50px" href="/all">All</button>
+                            <button type="button" class="btn btn-primary" style="width:110px;height:50px"
+                                href="/all">All</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <br>
             <div class="text-left">
-                <button type="button" class="btn btn-primary">Insert</button>
+                <a href="{{ route('car.create') }}" class="btn btn-success">Insert</a>
             </div>
             <br> @if(isset($details))
             <table class="table">
@@ -107,7 +122,7 @@
                         <td>{{ $row->Brand_Name }}</td>
                         <td><a href="{{ route('home.edit',$row->Car_Licence) }}" class="btn btn-warning">Edit</a></td>
                         <td>
-                            <form action="{{ route('home.destroy',$row->Car_Licence) }}" method="post">
+                            <form action="{{ route('car.destroy',$row->Car_Licence) }}" method="post">
                                 @csrf @method("DELETE")
 
                                 <button class="btn btn-danger">Delete</button>
