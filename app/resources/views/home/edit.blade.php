@@ -43,8 +43,11 @@
             <input type="text" class="form-control" id="usr" value='{{ $value->User_Province }}' >
             <p class="text-left">รหัสไปรษณีย์ : </p>
             <input type="text" class="form-control" id="usr" value='{{ $value->User_Post }}' >
-            <p class="text-left">ที่อยู่ : </p>
-            <input type="text" class="form-control" id="usr" value='{{ $value->User_Address }}' >
+            
+            <div class="text-left">
+                <label for="User_Address">ที่อยู่ : </label>
+                <textarea class="form-control" name="User_Address" rows="3"></textarea>
+            </div>
             @endforeach
             <br>
             <p class="lead">-------------------------------------------------------------</p>

@@ -28,7 +28,6 @@
         <div class="col-lg-12 text-center">
             <h1 class="mt-5">ข้อมูลรถยนต์ทั้งหมด</h1>
             <p class="lead">-------------------------------------------------------------</p>
-
             <div class="containe">
                 <div class="row">
 

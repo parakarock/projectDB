@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -22,7 +23,8 @@
 
 </head>
 
-<body>
+<body background = "https://i.pinimg.com/564x/a3/59/87/a359872dce67969e72894953ab6d4ee4.jpg" width="30%" hight="30%" >
+ 
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">

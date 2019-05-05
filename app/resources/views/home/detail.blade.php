@@ -16,7 +16,7 @@
     <div class="row">
         <div class="col-lg-12 text-center">
             <h1 class="mt-5">Detail</h1>
-            <p class="lead">-------------------------------------------------------------</p>
+            <p class="lead">====================================================================================================</p>
             @foreach ($data as $value)
             <h1>ข้อมูลรถ</h1>
             <p class="text-left">ทะเบียนรถยนต์ : {{ $value->Car_Licence }}</p>
