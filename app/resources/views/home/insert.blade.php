@@ -1,8 +1,12 @@
 @extends('layouts.app')
+@section('css')
+<style>
+    div.a { 
+        font-size: 150%;
+        color:#ffffff; }
 
-
-
-
+</style>
+@endsection
 
 
 
@@ -15,7 +19,6 @@
 <li class="nav-item">
     <a class="nav-link" href="/case">แจ้งความ</a>
 </li>
-
 
 @endsection
 
@@ -37,6 +40,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-12 text-center">
+            <div class='a'>
             <h1 class="mt-5">Insert</h1>
             <p class="lead">====================================================================================================</p>
             <p class="lead">ข้อมูลเจ้าของรถ</p>
@@ -163,10 +167,16 @@
                     <form method="post" action="{{ route('car.store') }}">
                         {{ csrf_field() }}
                         <div class="text-left">
+<<<<<<< HEAD
                             <div class="col-sm-5">
                                 <label for="Car_Licence">ทะเบียน : </label>
                                 <input type="text" name="Car_Licence" class="form-control">
                             </div>
+=======
+                            <label for="Car_Licence"> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ทะเบียน : </label>
+                            <input type="text" name="Car_Licence" class="from-control">
+                            <br>
+>>>>>>> 24cce0c8d6a9c1f960fc90ae68453b0ca49f943a
                         </div>
 
                         <div class="text-left">
