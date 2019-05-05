@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use DB;
+use App\Cases;
 
 class CaseController extends Controller
 {
@@ -15,7 +16,13 @@ class CaseController extends Controller
      */
     public function index()
     {
-        return view('home.case');
+        $cars = DB::table('Car')
+            ->select('Car_Licence')
+            ->get();
+        $policestations = DB::table('PoliceStation')
+            ->select('Station_ID', 'Station_Name')
+            ->get();
+        return view('home.case', compact('cars', 'policestations'));
     }
 
     /**
@@ -36,7 +43,32 @@ class CaseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate(
+            [
+                'Case_Detail' => 'required|max:10',
+                'Case_WhoName' => 'required|max:150',
+                'Case_Phone' => 'required|max:10',
+                'OwnerCar' => 'required',
+                'Station' => 'required'
+
+            ]
+        );
+
+        $case = new Cases;
+        $case->Case_Detail = $request->get('Case_Detail');
+        $case->Case_WhoName = $request->get('Case_WhoName');
+        $case->Case_Phone = $request->get('Case_Phone');
+        $case->OwnerCar = $request->get('OwnerCar');
+        $case->Station = $request->get('Station');
+        $case->save();
+        
+        $cars = DB::table('Car')
+        ->select('Car_Licence')
+        ->get();
+    $policestations = DB::table('PoliceStation')
+        ->select('Station_ID', 'Station_Name')
+        ->get();
+    return view('home.case', compact('cars', 'policestations'));
     }
 
     /**

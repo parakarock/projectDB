@@ -44,7 +44,7 @@
             <h1>คดี</h1>
             @if (count($case) === 0) ไม่พบข้อมูล @else @foreach ($case as $value)
             <p class="text-left">ข้อหา : {{ $value->Case_Detail }}</p>
-            <p class="text-left">วันที่ออกรถ : {{ $value->Case_Date }}</p>
+            <p class="text-left">วันที่แจ้ง : {{ $value->Case_Date }}</p>
             @endforeach @endif
 
         </div>

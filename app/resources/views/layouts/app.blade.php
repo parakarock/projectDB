@@ -20,15 +20,20 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style type="text/css">
+        body { background : #c4c4fb !important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+    </style>
+    
 
 </head>
 
 <body background = "https://i.pinimg.com/564x/a3/59/87/a359872dce67969e72894953ab6d4ee4.jpg" width="30%" hight="30%" >
  
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-laravel">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand js-scroll-trigger" href="{{ url('/') }}">
                     {{ config('app.name', 'car') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -76,11 +81,14 @@
                 </div>
             </div>
         </nav>
-
+        
         <main class="py-4">
             @yield('content')
+
         </main>
+        
     </div>
+    
 </body>
 
 </html>

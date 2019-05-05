@@ -1,5 +1,5 @@
 <?php
-use DB;
+// use DB;
 use Illuminate\Support\Facades\Input;
 /*
 |--------------------------------------------------------------------------
