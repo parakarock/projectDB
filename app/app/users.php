@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class users extends Model
 {
+    public $primarykey = 'User_Citizen';
     public $timestamps = false;
     protected $table = 'Users';
     protected $fillable = [

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Car;
+use App\users;
 use DB;
 
 class CarController extends Controller
@@ -90,7 +91,38 @@ class CarController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = DB::table('Car')
+                ->join('Brand','Brand.Brand_ID','=','Car.Brand')
+                ->join('Users','Users.User_Citizen','=','Car.User')
+                ->select('Car.Car_Licence',
+                        'Car.Car_Color',
+                        'Brand.Brand_Name',
+                        'Brand.Brand_Genaration',
+                        'Brand.Brand_Year',
+                        'Brand.Brand_Type',
+                        'Brand.Brand_Motor',
+                        'Brand.Brand_Gas',
+                        'Users.User_Citizen',
+                        'Users.User_Name',
+                        'Users.User_Lname',
+                        'Users.User_BirthDay',
+                        'Users.User_Country',
+                        'Users.User_Province',
+                        'Users.User_Post',
+                        'Users.User_Address')
+                ->where('Car.Car_Licence',$id)
+                ->get();
+        $case = DB::table('Case')
+                ->join('Car','Car.Car_Licence','=','Case.OwnerCar')
+                ->select('Case.Case_Detail',
+                        'Case.Case_Date')
+                ->where('Case.OwnerCar',$id)
+                ->get();
+        foreach ($data as $item){
+
+        }
+        return view('home.edit',compact('item','case'));
+        // return $data;
     }
 
     /**
@@ -102,7 +134,48 @@ class CarController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // $request->validate(
+        //     [
+        //         'User_Citizen' => 'required|max:13',
+        //         'User_Name' => 'required|max:150',
+        //         'User_Lname' => 'required|max:100',
+        //         'User_BirthDay' => 'required',
+        //         'User_Country' => 'required|max:100',
+        //         'User_Province' => 'required|max:100',
+        //         'User_Post' => 'required|max:5',
+        //         'User_Address' => 'required|max:150'
+        //     ]
+        //     );
+        // $citizen = doubleval($User_Citizen);
+        // $owner = DB::table('Users')
+        //         ->where("User_Citizen",$User_Citizen)
+        //         ->update("User_Name",$request->get('User_Name'));
+        $User_Name = $request->get('User_Name');
+        users::where('User_Citizen', $id)->update( array('User_Name'=>$request->get('User_Name'),
+                                                        'User_Lname'=>$request->get('User_Lname'),
+                                                        'User_BirthDay'=>date($request->get('User_BirthDay')),
+                                                        'User_Country'=>$request->get('User_Country'),
+                                                        'User_Province'=>$request->get('User_Province'),
+                                                        'User_Post'=>$request->get('User_Post'),
+                                                        'User_Address'=>$request->get('User_Address') ));
+        // $owner->User_Citizen = $request->get('User_Citizen');
+        // $owner->User_Name = $request->get('User_Name');
+        // $owner->User_Lname = $request->get('User_Lname');
+        // $owner->User_BirthDay = date($request->get('User_BirthDay'));
+        // $owner->User_Country = $request->get('User_Country');
+        // $owner->User_Province = $request->get('User_Province');
+        // $owner->User_Post = $request->get('User_Post');
+        // $owner->User_Address = $request->get('User_Address');
+        // $owner->get(); 
+        
+        $data = DB::table('Car')
+                ->join('Brand','Brand.Brand_ID','=','Car.Brand')
+                ->select('Car.Car_Licence','Car.Car_Color','Brand.Brand_Name')
+                ->get();
+
+       return view('home.all',compact('data'));
+        //  return compact($id,$owner);
+        // return $User_Name;
     }
 
     /**
