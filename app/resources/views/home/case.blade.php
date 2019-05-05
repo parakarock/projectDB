@@ -19,38 +19,47 @@
             <div class="panel-heading">
                 <form method="post" action="">
 
-                    <div class="form-group">
+                    <div class="text-left">
                         <form method="post" action="{{ route('case.store') }}">
                             {{ csrf_field() }}
-                            <label for="OwnerCar">ทะเบียนรถยนต์</label>
-                            <select name="OwnerCar" class="form-control">
+                            <div class="col-sm-5">
+                                <label for="OwnerCar">ทะเบียนรถยนต์ :</label>
+                                <select name="OwnerCar" class="form-control">
+                            </div>
                                 @foreach($cars as $row)
                                 <option value="{{ $row->Car_Licence }}">{{ $row->Car_Licence }}</option>
                                 @endforeach
                             </select>
                     </div>
                     <div class="text-left">
-                        <label for="Case_Detail">ข้อหา : </label>
-                        <input type="text" name="Case_Detail" class="form-control">
+                        <div class="col-sm-5">
+                            <label for="Case_Detail">ข้อหา : </label>
+                            <input type="text" name="Case_Detail" class="form-control">
+                        </div>
                     </div>
                     <div class="text-left">
-                        <label for="Case_WhoName">ชื่อผู้แจ้ง : </label>
-                        <input type="text" name="Case_WhoName" class="form-control">
+                        <div class="col-sm-5">
+                            <label for="Case_WhoName">ชื่อผู้แจ้ง : </label>
+                            <input type="text" name="Case_WhoName" class="form-control">
+                        </div>
                     </div>
                     <div class="text-left">
-                        <label for="Case_Phone">เบอร์โทรผู้แจ้ง : </label>
-                        <input type="text" name="Case_Phone" class="form-control">
+                        <div class="col-sm-5">
+                            <label for="Case_Phone">เบอร์โทรผู้แจ้ง : </label>
+                            <input type="text" name="Case_Phone" class="form-control">
+                        </div>
                     </div>
-
-                    <div class="form-group">
-                        <label for="Station">สถานี</label>
-                        <select name="Station" class="form-control">
+                    <div class="text-left">
+                        <div class="col-sm-5">
+                            <label for="Station">สถานี :</label>
+                            <select name="Station" class="form-control">
+                        </div>
                             @foreach($policestations as $row)
                             <option value="{{ $row->Station_ID }}">{{ $row->Station_Name }}</option>
                             @endforeach
                         </select>
                     </div>
-
+                    <br>
                     <button type="submit" class="btn btn-success">ตกลง</button>
                 </form>
             </div>
