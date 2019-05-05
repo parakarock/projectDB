@@ -1,4 +1,4 @@
-@extends('layouts.app') 
+@extends('layouts.app')
 @section('head')
 <li class="nav-item active">
     <a class="nav-link" href="/">หน้าแรก</a>
@@ -9,7 +9,7 @@
     </a>
 </li>
 @endsection
- 
+
 @section('content')
 <div class="container">
     <div class="row">
@@ -20,8 +20,14 @@
                 <form method="post" action="">
 
                     <div class="form-group">
-                        <label for="Car_Licence">ทะเบียนรถยนต์</label>
-                        <input type="text" name="Car_Licence" class="form-control">
+                        <form method="post" action="{{ route('case.store') }}">
+                            {{ csrf_field() }}
+                            <label for="OwnerCar">ทะเบียนรถยนต์</label>
+                            <select name="OwnerCar" class="form-control">
+                                @foreach($cars as $row)
+                                <option value="{{ $row->Car_Licence }}">{{ $row->Car_Licence }}</option>
+                                @endforeach
+                            </select>
                     </div>
                     <div class="form-group">
                         <label for="Case_Detail">ข้อหา</label>
@@ -35,13 +41,14 @@
                         <label for="Case_Phone">เบอร์โทรผู้แจ้ง</label>
                         <input type="text" name="Case_Phone" class="form-control">
                     </div>
+
                     <div class="form-group">
-                        <label for="OwnerCar">เจ้าของรถยนต์</label>
-                        <input type="text" name="OwnerCar" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="Case_Date">วันที่ผู้แจ้ง</label>
-                        <input type="date" name="Case_date" class="form-control">
+                        <label for="Station">สถานี</label>
+                        <select name="Station" class="form-control">
+                            @foreach($policestations as $row)
+                            <option value="{{ $row->Station_ID }}">{{ $row->Station_Name }}</option>
+                            @endforeach
+                        </select>
                     </div>
 
                     <button type="submit" class="btn btn-success">ตกลง</button>

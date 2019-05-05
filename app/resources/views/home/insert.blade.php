@@ -142,7 +142,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="User">รถของคุณ</label>
+                            <label for="User">เลขประจำตัวประชาชน</label>
                             <select name="User" class="form-control">
                                 @foreach($users as $row)
                                 <option value="{{ $row->User_Citizen }}">{{ $row->User_Citizen }}</option>
