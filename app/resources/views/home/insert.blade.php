@@ -1,8 +1,12 @@
 @extends('layouts.app')
+@section('css')
+<style>
+    div.a { 
+        font-size: 150%;
+        color:#ffffff; }
 
-
-
-
+</style>
+@endsection
 
 
 
@@ -15,7 +19,6 @@
 <li class="nav-item">
     <a class="nav-link" href="/case">แจ้งความ</a>
 </li>
-
 
 @endsection
 
@@ -37,6 +40,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-12 text-center">
+            <div class='a'>
             <h1 class="mt-5">Insert</h1>
             <p class="lead">====================================================================================================</p>
             <p class="lead">ข้อมูลเจ้าของรถ</p>
@@ -49,7 +53,7 @@
                 
                         <div class="text-left">
                             <label for="User_Citizen">หมายเลขบัตรประชาชน : </label>
-                            <input type="text" id="User_Citizen" class="text-right"/>
+                            <input type="text" id="User_Citizen" class="from-control"/>
                         </div>
                     
 
@@ -137,7 +141,8 @@
                         {{ csrf_field() }}
                         <div class="text-left">
                             <label for="Car_Licence"> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ทะเบียน : </label>
-                            <input type="text" name="Car_Licence" class="text-right">
+                            <input type="text" name="Car_Licence" class="from-control">
+                            <br>
                         </div>
 
                         <div class="text-left">

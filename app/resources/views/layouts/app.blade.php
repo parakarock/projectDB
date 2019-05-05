@@ -20,9 +20,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <style type="text/css">
-        body { background : #c4c4fb !important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
-    </style>
+    @yield('css')
     
 
 </head>
