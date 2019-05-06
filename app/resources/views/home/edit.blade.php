@@ -8,6 +8,7 @@
 
 
 
+
 @section('head')
 <li class="nav-item active">
     <a class="nav-link" href="/">หน้าแรก
@@ -18,6 +19,8 @@
     <a class="nav-link" href="/case">แจ้งความ</a>
 </li>
 @endsection
+
+
 
 
 
@@ -45,35 +48,35 @@
                 @method("PUT")
                 <div class="form-group">
                     <p class="text-left" for="User_Citizen">เลขประจำตัวประชาชน : </p>
-                    <input type="text" class="form-control"  value='{{ $item->User_Citizen }}'>
+                    <input type="text" class="form-control" value='{{ $item->User_Citizen }}' readonly>
                 </div>
                 <div class="form-group">
                     <p class="text-left" for="User_Name">ชื่อ : </p>
-                    <input type="text" name="User_Name" class="form-control"  value='{{ $item->User_Name }}'>
+                    <input type="text" name="User_Name" class="form-control" value='{{ $item->User_Name }}'>
                 </div>
                 <div class="form-group">
                     <p class="text-left" for="User_Lname">นามสกุล : </p>
-                    <input type="text" name="User_Lname" class="form-control"  value='{{ $item->User_Lname }}'>
+                    <input type="text" name="User_Lname" class="form-control" value='{{ $item->User_Lname }}'>
                 </div>
                 <div class="form-group">
                     <p class="text-left" for="User_BirthDay">วันเกิด : </p>
-                    <input type="date" name="User_BirthDay" class="form-control"  value='{{ $item->User_BirthDay }}'>
+                    <input type="date" name="User_BirthDay" class="form-control" value='{{ $item->User_BirthDay }}'>
                 </div>
                 <div class="form-group">
                     <p class="text-left" for="User_Country">ประเทศ : </p>
-                    <input type="text" name="User_Country" class="form-control"  value='{{ $item->User_Country }}'>
+                    <input type="text" name="User_Country" class="form-control" value='{{ $item->User_Country }}'>
                 </div>
                 <div class="form-group">
                     <p class="text-left" for="User_Province">จังหวัด : </p>
-                    <input type="text" name="User_Province" class="form-control"  value='{{ $item->User_Province }}'>
+                    <input type="text" name="User_Province" class="form-control" value='{{ $item->User_Province }}'>
                 </div>
                 <div class="form-group">
                     <p class="text-left" for="User_Post">รหัสไปรษณีย์ : </p>
-                    <input type="text" name="User_Post" class="form-control"  value='{{ $item->User_Post }}'>
+                    <input type="text" name="User_Post" class="form-control" value='{{ $item->User_Post }}'>
                 </div>
                 <div class="form-group">
                     <p class="text-left" for="User_Address">ที่อยู่ : </p>
-                    <input type="text" name="User_Address" class="form-control"  value='{{ $item->User_Address }}'>
+                    <input type="text" name="User_Address" class="form-control" value='{{ $item->User_Address }}'>
                 </div>
                 <br>
                 <div class="text-right">

@@ -16,6 +16,7 @@ Route::resource('home','HomeController');
 Route::resource('car','CarController');
 Route::resource('user','UserController');
 Route::resource('brand','BrandController');
+Route::resource('transfer','TransferController');
 Auth::routes();
 Route::get('/','HomeController@index');
 

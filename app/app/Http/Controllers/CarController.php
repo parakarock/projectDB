@@ -122,7 +122,6 @@ class CarController extends Controller
 
         }
         return view('home.edit',compact('item','case'));
-        // return $data;
     }
 
     /**
@@ -134,23 +133,20 @@ class CarController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // $request->validate(
-        //     [
-        //         'User_Citizen' => 'required|max:13',
-        //         'User_Name' => 'required|max:150',
-        //         'User_Lname' => 'required|max:100',
-        //         'User_BirthDay' => 'required',
-        //         'User_Country' => 'required|max:100',
-        //         'User_Province' => 'required|max:100',
-        //         'User_Post' => 'required|max:5',
-        //         'User_Address' => 'required|max:150'
-        //     ]
-        //     );
-        // $citizen = doubleval($User_Citizen);
-        // $owner = DB::table('Users')
-        //         ->where("User_Citizen",$User_Citizen)
-        //         ->update("User_Name",$request->get('User_Name'));
-        $User_Name = $request->get('User_Name');
+        $request->validate(
+            [
+                'User_Citizen' => 'required|max:13',
+                'User_Name' => 'required|max:150',
+                'User_Lname' => 'required|max:100',
+                'User_BirthDay' => 'required',
+                'User_Country' => 'required|max:100',
+                'User_Province' => 'required|max:100',
+                'User_Post' => 'required|max:5',
+                'User_Address' => 'required|max:150'
+            ]
+            );
+       
+        
         users::where('User_Citizen', $id)->update( array('User_Name'=>$request->get('User_Name'),
                                                         'User_Lname'=>$request->get('User_Lname'),
                                                         'User_BirthDay'=>date($request->get('User_BirthDay')),
@@ -158,15 +154,7 @@ class CarController extends Controller
                                                         'User_Province'=>$request->get('User_Province'),
                                                         'User_Post'=>$request->get('User_Post'),
                                                         'User_Address'=>$request->get('User_Address') ));
-        // $owner->User_Citizen = $request->get('User_Citizen');
-        // $owner->User_Name = $request->get('User_Name');
-        // $owner->User_Lname = $request->get('User_Lname');
-        // $owner->User_BirthDay = date($request->get('User_BirthDay'));
-        // $owner->User_Country = $request->get('User_Country');
-        // $owner->User_Province = $request->get('User_Province');
-        // $owner->User_Post = $request->get('User_Post');
-        // $owner->User_Address = $request->get('User_Address');
-        // $owner->get(); 
+        
         
         $data = DB::table('Car')
                 ->join('Brand','Brand.Brand_ID','=','Car.Brand')
@@ -174,8 +162,7 @@ class CarController extends Controller
                 ->get();
 
        return view('home.all',compact('data'));
-        //  return compact($id,$owner);
-        // return $User_Name;
+        
     }
 
     /**
@@ -186,8 +173,7 @@ class CarController extends Controller
      */
     public function destroy($id)
     {
-        // $car = Car::find($Car_Licence->$id);
-        // $car->delete();
+        
         DB::delete('delete from Car where Car_Licence = ?',[$id]);
 
         $data = DB::table('Car')
@@ -196,6 +182,6 @@ class CarController extends Controller
                 ->get();
 
        return view('home.all',compact('data')); 
-        // return $id;
+       
     }
 }
