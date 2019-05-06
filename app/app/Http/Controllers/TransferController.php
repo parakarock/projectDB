@@ -97,7 +97,7 @@ class TransferController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Car::where('Car_Licence', $id)->update( array('User'=>$request->get('User_Citizen') ));
+         Car::where('Car_Licence', $id)->update( array('User'=>$request->get('User') ));
         
         
         $data = DB::table('Car')
