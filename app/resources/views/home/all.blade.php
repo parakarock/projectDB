@@ -1,5 +1,12 @@
 @extends('layouts.app')
+@section('css')
+<style>
+    div.a { 
+        font-size: 150%;
+        color:#ffffff; }
 
+</style>
+@endsection
 
 
 
@@ -26,6 +33,8 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-12 text-center">
+
+            <div class='a'>
             <h1 class="mt-5">ข้อมูลรถยนต์ทั้งหมด</h1>
             <p class="lead">-------------------------------------------------------------</p>
             <div class="containe">
@@ -46,7 +55,7 @@
                                 </div>
                                 <!--end of col-->
                                 <div class="col-auto">
-                                    <button class="btn btn-lg btn-success" type="submit">Search</button>
+                                    <button class="btn btn-lg btn-success" type="submit" >Search </button>
                                 </div>
                                 <!--end of col-->
 
@@ -64,6 +73,7 @@
                 </div>
             </div>
             <div class="text-left">
+                <br>
                 <a href="{{ route('car.create') }}" class="btn btn-success">Insert</a>
             </div>
             <br> @if(isset($details))
@@ -91,7 +101,6 @@
                         <td>
                             <form action="{{ route('home.destroy',$row->Car_Licence) }}" method="post">
                                 @csrf @method("DELETE")
-
                                 <button class="btn btn-danger">Delete</button>
                             </form>
                     </tr>
@@ -133,6 +142,7 @@
                 @endforeach
             </table>
             @endif
+            </div>
         </div>
     </div>
 </div>

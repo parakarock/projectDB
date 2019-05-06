@@ -1,11 +1,12 @@
 @extends('layouts.app')
+@section('css')
+<style>
+    div.a { 
+        font-size: 150%;
+        color:#ffffff; }
 
-
-
-
-
-
-
+</style>
+@endsection
 
 
 
@@ -29,6 +30,8 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-12 text-center">
+
+            <div class='a'> 
             <h1 class="mt-5">Edit</h1>
             <p class="lead">-------------------------------------------------------------</p>
             <h1>ข้อมูลรถ</h1>
@@ -90,6 +93,8 @@
             <p class="text-left">ข้อหา : {{ $value->Case_Detail }} </p>
             <p class="text-left">วันที่แจ้ง : {{ $value->Case_Date }} </p>
             @endforeach @endif
+
+            </div>
 
 
         </div>

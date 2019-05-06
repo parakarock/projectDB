@@ -1,8 +1,12 @@
 @extends('layouts.app')
+@section('css')
+<style>
+    div.a { 
+        font-size: 150%;
+        color:#ffffff; }
 
-
-
-
+</style>
+@endsection
 
 
 
@@ -15,7 +19,6 @@
 <li class="nav-item">
     <a class="nav-link" href="/case">แจ้งความ</a>
 </li>
-
 
 @endsection
 
@@ -37,6 +40,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-12 text-center">
+            <div class='a'>
             <h1 class="mt-5">Insert</h1>
             <p class="lead">====================================================================================================</p>
             <p class="lead">ข้อมูลเจ้าของรถ</p>
@@ -46,47 +50,62 @@
                     <form method="post" action="{{ route('user.store') }}">
                         {{ csrf_field() }}
 
-                
-                        <div class="text-left">
-                            <label for="User_Citizen">หมายเลขบัตรประชาชน : </label>
-                            <input type="text" id="User_Citizen" class="text-right"/>
-                        </div>
                     
+                        <div class="text-left">
+                            <div class="col-sm-5">
+                                <label for="User_Citizen">หมายเลขบัตรประชาชน : </label>
+                                <input type="text" id="User_Citizen" class="form-control">
+                            </div>
+                        </div>
+
 
                         <div class="text-left">
-                            <label for="User_Name"> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; ชื่อ : </label>
-                            <input type="text" name="User_Name" class="text-right">
-
+                            <div class="col-sm-5">
+                                <label for="User_Name">ชื่อ : </label>
+                                <input type="text" name="User_Name" class="form-control">
+                            </div>
                         </div>
 
                         <div class="text-left">
-                            <label for="User_Lname"> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;นามสกุล : </label>
-                            <input type="text" name="User_Lname" class="text-right">
+                            <div class="col-sm-5">
+                                <label for="User_Lname">นามสกุล : </label>
+                                <input type="text" name="User_Lname" class="form-control">
+                            </div>
                         </div>
 
                         <div class="text-left">
-                            <label for="User_BirthDay"> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;วันเกิด : </label>
-                            <input type="date" name="User_BirthDay" class="text-right">
+                            <div class="col-sm-5">
+                                <label for="User_BirthDay">วันเกิด : </label>
+                                <input type="date" name="User_BirthDay" class="form-control">
+                            </div>
                         </div>
 
                         <div class="text-left">
-                            <label for="User_Country"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; ประเทศ : </label>
-                            <input type="text" name="User_Country" class="text-right">
+                            <div class="col-sm-5">
+                                <label for="User_Country">ประเทศ : </label>
+                                <input type="text" name="User_Country" class="form-control">
+                            </div>
                         </div>
 
                         <div class="text-left">
-                            <label for="User_Province"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; จังหวัด : </label>
-                            <input type="text" name="User_Province" class="text-right">
+                            <div class="col-sm-5">
+                                <label for="User_Province">จังหวัด : </label>
+                                <input type="text" name="User_Province" class="form-control">
+                            </div>
                         </div>
 
                         <div class="text-left">
-                            <label for="User_Post"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; รหัสไปรษณีย์ : </label>
-                            <input type="text" name="User_Post" class="text-right">
+                            <div class="col-sm-5">
+                                <label for="User_Post">รหัสไปรษณีย์ : </label>
+                                <input type="text" name="User_Post" class="form-control">
+                            </div>
                         </div>
 
                         <div class="text-left">
-                            <label for="User_Address"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; ที่อยู่ : </label>
-                            <textarea class="text-right" name="User_Address" rows="3"></textarea>
+                            <div class="col-sm-5">
+                                <label for="User_Address">ที่อยู่ : </label>
+                                <textarea class="form-control" name="User_Address" rows="5"></textarea>
+                            </div>
                         </div>
                         
                         <div>
@@ -98,33 +117,45 @@
                     <form method="post" action="{{ route('brand.store') }}">
                         {{ csrf_field() }}
                         <div class="text-left">
-                            <label for="Brand_Name"> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; ชื่อแบรนด์ : </label>
-                            <input type="text" name="Brand_Name" class="text-right">
+                            <div class="col-sm-5">
+                                <label for="Brand_Name">ชื่อแบรนด์ : </label>
+                                <input type="text" name="Brand_Name" class="form-control">
+                            </div>
                         </div>
 
                         <div class="text-left">
-                            <label for="Brand_Genaration"> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;  รุ่น : </label>
-                            <input type="text" name="Brand_Genaration" class="text-right">
+                            <div class="col-sm-5">
+                                <label for="Brand_Genaration">รุ่น : </label>
+                                <input type="text" name="Brand_Genaration" class="form-control">
+                            </div>
                         </div>
 
                         <div class="text-left">
-                            <label for="Brand_Year"> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; ปีที่ผลิต : </label>
-                            <input type="text" name="Brand_Year" class="text-right">
+                            <div class="col-sm-5">
+                                <label for="Brand_Year">ปีที่ผลิต : </label>
+                                <input type="text" name="Brand_Year" class="form-control">
+                            </div>
                         </div>
 
                         <div class="text-left">
-                            <label for="Brand_Type">  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ประเภทรถยนต์ : </label>
-                            <input type="text" name="Brand_Type" class="text-right">
+                            <div class="col-sm-5">
+                                <label for="Brand_Type">ประเภทรถยนต์ : </label>
+                                <input type="text" name="Brand_Type" class="form-control">
+                            </div>
                         </div>
 
                         <div class="text-left">
-                            <label for="Brand_Motor">  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; เครื่องยนต์ : </label>
-                            <input type="text" name="Brand_Motor" class="text-right">
+                            <div class="col-sm-5">
+                                <label for="Brand_Motor">เครื่องยนต์ : </label>
+                                <input type="text" name="Brand_Motor" class="form-control">
+                            </div>
                         </div>
 
                         <div class="text-left">
-                            <label for="Brand_Gas">  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; น้ำมันที่ใช้ : </label>
-                            <input type="text" name="Brand_Gas" class="text-right">
+                            <div class="col-sm-5">
+                                <label for="Brand_Gas">น้ำมันที่ใช้ : </label>
+                                <input type="text" name="Brand_Gas" class="form-control">
+                            </div>
                         </div>
                         
                         <div>
@@ -136,23 +167,37 @@
                     <form method="post" action="{{ route('car.store') }}">
                         {{ csrf_field() }}
                         <div class="text-left">
+<<<<<<< HEAD
+                            <div class="col-sm-5">
+                                <label for="Car_Licence">ทะเบียน : </label>
+                                <input type="text" name="Car_Licence" class="form-control">
+                            </div>
+=======
                             <label for="Car_Licence"> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ทะเบียน : </label>
-                            <input type="text" name="Car_Licence" class="text-right">
+                            <input type="text" name="Car_Licence" class="from-control">
+                            <br>
+>>>>>>> 24cce0c8d6a9c1f960fc90ae68453b0ca49f943a
                         </div>
 
                         <div class="text-left">
-                            <label for="Car_Color"> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; สีรถยนต์ : </label>
-                            <input type="text" name="Car_Color" class="text-right">
+                            <div class="col-sm-5">
+                                <label for="Car_Color">สีรถยนต์ : </label>
+                                <input type="text" name="Car_Color" class="form-control">
+                            </div>
                         </div>
 
                         <div class="text-left">
-                            <label for="Car_Outday"> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; วันที่ออกรถ : </label>
-                            <input type="date" name="Car_Outday" class="text-right">
+                            <div class="col-sm-5">
+                                <label for="Car_Outday">วันที่ออกรถ : </label>
+                                <input type="date" name="Car_Outday" class="form-control">
+                            </div>
                         </div>
 
                         <div class="text-left">
-                            <label for="User"> เลขประจำตัวประชาชน : </label>
-                            <select name="User" class="text-right">
+                            <div class="col-sm-5">
+                                <label for="User">เลขประจำตัวประชาชน : </label>
+                                <select name="User" class="form-control">
+                            </div>
                                 @foreach($users as $row)
                                 <option value="{{ $row->User_Citizen }}">{{ $row->User_Citizen }}</option>
                                 @endforeach
@@ -160,8 +205,10 @@
                         </div>
 
                         <div class="text-left">
-                            <label for="Brand"> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ยี่ห้อรถ : </label>
-                            <select name="Brand" class="text-right">
+                            <div class="col-sm-5">
+                                <label for="Brand">ยี่ห้อรถ : </label>
+                                <select name="Brand" class="form-control">
+                            </div>
                                 @foreach($brands as $row)
                                 <option value="{{ $row->Brand_ID }}">{{ $row->Brand_Name }}</option>
                                 @endforeach

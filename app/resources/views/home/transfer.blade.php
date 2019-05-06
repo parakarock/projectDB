@@ -1,5 +1,13 @@
-@extends('layouts.app')
+@extends('layouts.app') 
 
+@section('css')
+<style>
+    div.a { 
+        font-size: 150%;
+        color:#ffffff; }
+
+</style>
+@endsection
 
 
 @section('head')
@@ -23,6 +31,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-12 text-center">
+            <div class='a'>
             <h1 class="mt-5">Transfer</h1>
             <p class="lead">-------------------------------------------------------------</p>
 
@@ -62,6 +71,7 @@
                         <button class="btn btn-lg btn-success" type="submit">Save</button>
                     </div>
                 </form>
+            </div>
             </div>
         </div>
     </div>
