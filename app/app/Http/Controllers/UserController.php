@@ -65,7 +65,9 @@ class UserController extends Controller
                 ->select('Car.Car_Licence','Car.Car_Color','Brand.Brand_Name')
                 ->get();
 
-       return view('home.all',compact('data'));
+        
+        return back()->with('success', 'บันทึกข้อมูลเจ้าของรถสำเร็จ!');
+        return view('home.all',compact('data'));
         
     }
 

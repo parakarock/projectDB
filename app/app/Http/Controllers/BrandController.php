@@ -61,7 +61,7 @@ class BrandController extends Controller
                 ->join('Brand','Brand.Brand_ID','=','Car.Brand')
                 ->select('Car.Car_Licence','Car.Car_Color','Brand.Brand_Name')
                 ->get();
-
+       return back()->with('success', 'บันทึกข้อมูลแบรนด์สำเร็จ!');
        return view('home.all',compact('data'));
     }
 
