@@ -45,16 +45,23 @@ class CarController extends Controller
     
     public function store(Request $request)
     {
-         $request->validate(
+         $rules = 
             [
                 'Car_Licence' => 'required|max:10',
                 'Car_Color' => 'required|max:150',
-                'Car_Outday' => 'required',
-                'Brand' => 'required',
-                'User' => 'required'
+                'Car_Outday' => 'required'
                 
-            ]
-            );
+                
+            ];
+        $customMessages = [
+                'Car_Licence.required' => 'กรุณากรอกเลขทะเบียน',
+                'Car_Licence.max' => 'กรุณากรอกตัวอักษรไม่เกิน 10 ตัว',
+                'Car_Color.required' => 'กรุณากรอกสีของรถ',
+                'Car_Color.max' => 'กรุณากรอกตัวอักษรไม่เกิน 150 ตัว',
+                'Car_Outday.required' => 'กรุณากรอกเลือกวันที่ออกรถ'
+            ];
+         $this->validate($request, $rules, $customMessages);
+
         
         $car = new Car;
         $car->Car_Licence = $request->get('Car_Licence');
@@ -133,9 +140,8 @@ class CarController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate(
+        $rules = 
             [
-                'User_Citizen' => 'required|max:13',
                 'User_Name' => 'required|max:150',
                 'User_Lname' => 'required|max:100',
                 'User_BirthDay' => 'required',
@@ -143,8 +149,27 @@ class CarController extends Controller
                 'User_Province' => 'required|max:100',
                 'User_Post' => 'required|max:5',
                 'User_Address' => 'required|max:150'
-            ]
-            );
+            ];
+
+        $customMessages = [
+                'User_Name.required' => 'กรุณากรอกชื่อ',
+                'User_Name.max' => 'กรุณากรอกตัวอักษรไม่เกิน 150 ตัว',
+                'User_Lname.required' => 'กรุณากรอกนามสกุล',
+                'User_Lname.max' => 'กรุณากรอกตัวอักษรไม่เกิน 150 ตัว',
+                'User_BirthDay.required' => 'กรุณาใส่วันเกิด',
+                'User_Country.required' => 'กรุณากรอกชื่อประเทศ',
+                'User_Country.max' => 'กรุณากรอกตัวอักษรไม่เกิน 100 ตัว',
+                'User_Province.required' => 'กรุณากรอกชื่อจังหวัด',
+                'User_Province.max' => 'กรุณากรอกตัวอักษรไม่เกิน 100 ตัว',
+                'User_Post.required' => 'กรุณากรอกรหัสไปรษณีย์',
+                'User_Post.max' => 'กรุณากรอกตัวอักษรไม่เกิน 5 ตัว',
+                'User_Address.required' => 'กรุณากรอกที่อยู่',
+                'User_Address.max' => 'กรุณากรอกตัวอักษรไม่เกิน 150 ตัว'
+            ];
+
+
+             $this->validate($request, $rules, $customMessages);
+            
        
         
         users::where('User_Citizen', $id)->update( array('User_Name'=>$request->get('User_Name'),

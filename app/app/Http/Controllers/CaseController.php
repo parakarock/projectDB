@@ -43,16 +43,26 @@ class CaseController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate(
+        $rules = 
             [
-                'Case_Detail' => 'required|max:10',
+                'Case_Detail' => 'required|max:100',
                 'Case_WhoName' => 'required|max:150',
                 'Case_Phone' => 'required|max:10',
                 'OwnerCar' => 'required',
                 'Station' => 'required'
 
-            ]
-        );
+            ];
+       $customMessages = [
+                'Case_Detail.required' => 'กรุณากรอกข้อหาที่จะแจ้ง',
+                'Case_Detail.max' => 'กรุณากรอกตัวอักษรไม่เกิน 100 ตัว',
+                'Case_WhoName.required' => 'กรุณากรอกชื่อคนแจ้งความ',
+                'Case_WhoName.max' => 'กรุณากรอกตัวอักษรไม่เกิน 150 ตัว',
+                'Case_Phone.required' => 'กรุณากรอกเบอร์โทรศัพท์',
+                'Case_Phone.max' => 'กรุณากรอกตัวเลขไม่เกิน 10 ตัว'
+            ];
+
+
+            $this->validate($request, $rules, $customMessages);
 
         $case = new Cases;
         $case->Case_Detail = $request->get('Case_Detail');

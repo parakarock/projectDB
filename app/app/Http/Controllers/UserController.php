@@ -36,18 +36,39 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate(
+        $rules = 
             [
                 'User_Citizen' => 'required|max:13',
                 'User_Name' => 'required|max:150',
-                'User_Lname' => 'required|max:100',
+                'User_Lname' => 'required|max:150',
                 'User_BirthDay' => 'required',
                 'User_Country' => 'required|max:100',
                 'User_Province' => 'required|max:100',
                 'User_Post' => 'required|max:5',
                 'User_Address' => 'required|max:150'
-            ]
-            );
+            ];
+            $customMessages = [
+                'User_Citizen.required' => 'กรุณากรอกบัตรประชาชน',
+                'User_Citizen.max' => 'กรุณากรอกเลขไม่เกิน 13 หลัก',
+                'User_Name.required' => 'กรุณากรอกชื่อ',
+                'User_Name.max' => 'กรุณากรอกตัวอักษรไม่เกิน 150 ตัว',
+                'User_Lname.required' => 'กรุณากรอกนามสกุล',
+                'User_Lname.max' => 'กรุณากรอกตัวอักษรไม่เกิน 150 ตัว',
+                'User_BirthDay.required' => 'กรุณาใส่วันเกิด',
+                'User_Country.required' => 'กรุณากรอกชื่อประเทศ',
+                'User_Country.max' => 'กรุณากรอกตัวอักษรไม่เกิน 100 ตัว',
+                'User_Province.required' => 'กรุณากรอกชื่อจังหวัด',
+                'User_Province.max' => 'กรุณากรอกตัวอักษรไม่เกิน 100 ตัว',
+                'User_Post.required' => 'กรุณากรอกรหัสไปรษณีย์',
+                'User_Post.max' => 'กรุณากรอกตัวอักษรไม่เกิน 5 ตัว',
+                'User_Address.required' => 'กรุณากรอกที่อยู่',
+                'User_Address.max' => 'กรุณากรอกตัวอักษรไม่เกิน 150 ตัว'
+            ];
+
+             $this->validate($request, $rules, $customMessages);
+
+
+         
     
         $owner = new Users;
         $owner->User_Citizen = $request->get('User_Citizen');

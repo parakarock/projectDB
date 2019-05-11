@@ -54,59 +54,67 @@
 
 
                             <div class="text-left">
-                                <div class="col-sm-5">
+                                <div class="col-sm-5 form-group{{ $errors->has('User_Citizen') ? ' has-error' : '' }}">
                                     <label for="User_Citizen">หมายเลขบัตรประชาชน : </label>
-                                    <input type="text" id="User_Citizen" class="form-control">
+                                    <input type="text" name="User_Citizen" class="form-control">
+                                    <small class="text-danger">{{ $errors->first('User_Citizen') }}</small>
                                 </div>
                             </div>
 
 
                             <div class="text-left">
-                                <div class="col-sm-5">
+                                <div class="col-sm-5 form-group{{ $errors->has('User_Name') ? ' has-error' : '' }}">
                                     <label for="User_Name">ชื่อ : </label>
                                     <input type="text" name="User_Name" class="form-control">
+                                    <small class="text-danger">{{ $errors->first('User_Name') }}</small>
                                 </div>
                             </div>
 
                             <div class="text-left">
-                                <div class="col-sm-5">
+                                <div class="col-sm-5 form-group{{ $errors->has('User_Lname') ? ' has-error' : '' }}">
                                     <label for="User_Lname">นามสกุล : </label>
                                     <input type="text" name="User_Lname" class="form-control">
+                                    <small class="text-danger">{{ $errors->first('User_Lname') }}</small>
                                 </div>
                             </div>
 
                             <div class="text-left">
-                                <div class="col-sm-5">
+                                <div class="col-sm-5 form-group{{ $errors->has('User_BirthDay') ? ' has-error' : '' }}">
                                     <label for="User_BirthDay">วันเกิด : </label>
                                     <input type="date" name="User_BirthDay" class="form-control">
+                                    <small class="text-danger">{{ $errors->first('User_BirthDay') }}</small>
                                 </div>
                             </div>
 
                             <div class="text-left">
-                                <div class="col-sm-5">
+                                <div class="col-sm-5 form-group{{ $errors->has('User_Country') ? ' has-error' : '' }}">
                                     <label for="User_Country">ประเทศ : </label>
                                     <input type="text" name="User_Country" class="form-control">
+                                    <small class="text-danger">{{ $errors->first('User_Country') }}</small>
                                 </div>
                             </div>
 
                             <div class="text-left">
-                                <div class="col-sm-5">
+                                <div class="col-sm-5 form-group{{ $errors->has('User_Province') ? ' has-error' : '' }}">
                                     <label for="User_Province">จังหวัด : </label>
                                     <input type="text" name="User_Province" class="form-control">
+                                    <small class="text-danger">{{ $errors->first('User_Province') }}</small>
                                 </div>
                             </div>
 
                             <div class="text-left">
-                                <div class="col-sm-5">
+                                <div class="col-sm-5 form-group{{ $errors->has('User_Post') ? ' has-error' : '' }}">
                                     <label for="User_Post">รหัสไปรษณีย์ : </label>
                                     <input type="text" name="User_Post" class="form-control">
+                                    <small class="text-danger">{{ $errors->first('User_Post') }}</small>
                                 </div>
                             </div>
 
                             <div class="text-left">
-                                <div class="col-sm-5">
+                                <div class="col-sm-5 form-group{{ $errors->has('User_Address') ? ' has-error' : '' }}">
                                     <label for="User_Address">ที่อยู่ : </label>
                                     <textarea class="form-control" name="User_Address" rows="5"></textarea>
+                                    <small class="text-danger">{{ $errors->first('User_Address') }}</small>
                                 </div>
                             </div>
 
@@ -120,44 +128,50 @@
                         <form method="post" action="{{ route('brand.store') }}">
                             {{ csrf_field() }}
                             <div class="text-left">
-                                <div class="col-sm-5">
+                                <div class="col-sm-5 form-group{{ $errors->has('Brand_Name') ? ' has-error' : '' }}">
                                     <label for="Brand_Name">ชื่อแบรนด์ : </label>
                                     <input type="text" name="Brand_Name" class="form-control">
+                                    <small class="text-danger">{{ $errors->first('Brand_Name') }}</small>
                                 </div>
                             </div>
 
                             <div class="text-left">
-                                <div class="col-sm-5">
+                                <div class="col-sm-5 form-group{{ $errors->has('Brand_Genaration') ? ' has-error' : '' }}">
                                     <label for="Brand_Genaration">รุ่น : </label>
                                     <input type="text" name="Brand_Genaration" class="form-control">
+                                    <small class="text-danger">{{ $errors->first('Brand_Genaration') }}</small>
                                 </div>
                             </div>
 
                             <div class="text-left">
-                                <div class="col-sm-5">
+                                <div class="col-sm-5 form-group{{ $errors->has('Brand_Year') ? ' has-error' : '' }}">
                                     <label for="Brand_Year">ปีที่ผลิต : </label>
                                     <input type="text" name="Brand_Year" class="form-control">
+                                    <small class="text-danger">{{ $errors->first('Brand_Year') }}</small>
                                 </div>
                             </div>
 
                             <div class="text-left">
-                                <div class="col-sm-5">
+                                <div class="col-sm-5 form-group{{ $errors->has('Brand_Type') ? ' has-error' : '' }}">
                                     <label for="Brand_Type">ประเภทรถยนต์ : </label>
                                     <input type="text" name="Brand_Type" class="form-control">
+                                    <small class="text-danger">{{ $errors->first('Brand_Type') }}</small>
                                 </div>
                             </div>
 
                             <div class="text-left">
-                                <div class="col-sm-5">
+                                <div class="col-sm-5 form-group{{ $errors->has('Brand_Motor') ? ' has-error' : '' }}">
                                     <label for="Brand_Motor">เครื่องยนต์ : </label>
                                     <input type="text" name="Brand_Motor" class="form-control">
+                                    <small class="text-danger">{{ $errors->first('Brand_Motor') }}</small>
                                 </div>
                             </div>
 
                             <div class="text-left">
-                                <div class="col-sm-5">
+                                <div class="col-sm-5 form-group{{ $errors->has('Brand_Gas') ? ' has-error' : '' }}">
                                     <label for="Brand_Gas">น้ำมันที่ใช้ : </label>
                                     <input type="text" name="Brand_Gas" class="form-control">
+                                    <small class="text-danger">{{ $errors->first('Brand_Gas') }}</small>
                                 </div>
                             </div>
 
@@ -171,23 +185,26 @@
                         <form method="post" action="{{ route('car.store') }}">
                             {{ csrf_field() }}
                             <div class="text-left">
-                                <div class="col-sm-5">
+                                <div class="col-sm-5 form-group{{ $errors->has('Car_Licence') ? ' has-error' : '' }}">
                                     <label for="Car_Licence">ทะเบียน : </label>
                                     <input type="text" name="Car_Licence" class="form-control">
+                                    <small class="text-danger">{{ $errors->first('Car_Licence') }}</small>
                                 </div>
                             </div>
 
                             <div class="text-left">
-                                <div class="col-sm-5">
+                                <div class="col-sm-5 form-group{{ $errors->has('Car_Color') ? ' has-error' : '' }}">
                                     <label for="Car_Color">สีรถยนต์ : </label>
                                     <input type="text" name="Car_Color" class="form-control">
+                                    <small class="text-danger">{{ $errors->first('Car_Color') }}</small>
                                 </div>
                             </div>
 
                             <div class="text-left">
-                                <div class="col-sm-5">
+                                <div class="col-sm-5 form-group{{ $errors->has('Car_Outday') ? ' has-error' : '' }}">
                                     <label for="Car_Outday">วันที่ออกรถ : </label>
                                     <input type="date" name="Car_Outday" class="form-control">
+                                    <small class="text-danger">{{ $errors->first('Car_Outday') }}</small>
                                 </div>
                             </div>
 
