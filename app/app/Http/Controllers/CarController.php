@@ -70,13 +70,7 @@ class CarController extends Controller
         $car->Brand = $request->get('Brand');
         $car->User = $request->get('User');
         $car->save();
-
-        $data = DB::table('Car')
-                ->join('Brand','Brand.Brand_ID','=','Car.Brand')
-                ->select('Car.Car_Licence','Car.Car_Color','Brand.Brand_Name')
-                ->get();
-
-       return view('home.all',compact('data'));
+        return redirect('all')->with('success', 'บันทึกข้อมูลรถยนต์สำเร็จ!');
     }
 
     /**
@@ -128,6 +122,7 @@ class CarController extends Controller
         foreach ($data as $item){
 
         }
+        
         return view('home.edit',compact('item','case'));
     }
 
@@ -180,13 +175,7 @@ class CarController extends Controller
                                                         'User_Post'=>$request->get('User_Post'),
                                                         'User_Address'=>$request->get('User_Address') ));
         
-        
-        $data = DB::table('Car')
-                ->join('Brand','Brand.Brand_ID','=','Car.Brand')
-                ->select('Car.Car_Licence','Car.Car_Color','Brand.Brand_Name')
-                ->get();
-
-       return view('home.all',compact('data'));
+        return redirect('all')->with('success', 'แก้ไขข้อมูลสำเร็จ!');
         
     }
 

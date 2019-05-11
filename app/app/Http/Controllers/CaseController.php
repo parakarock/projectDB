@@ -31,9 +31,7 @@ class CaseController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        //
-    }
+    { }
 
     /**
      * Store a newly created resource in storage.
@@ -71,14 +69,8 @@ class CaseController extends Controller
         $case->OwnerCar = $request->get('OwnerCar');
         $case->Station = $request->get('Station');
         $case->save();
-        
-        $cars = DB::table('Car')
-        ->select('Car_Licence')
-        ->get();
-    $policestations = DB::table('PoliceStation')
-        ->select('Station_ID', 'Station_Name')
-        ->get();
-    return view('home.case', compact('cars', 'policestations'));
+
+        return back()->with('success', 'บันทึกการแจ้งความสำเร็จ!');
     }
 
     /**
