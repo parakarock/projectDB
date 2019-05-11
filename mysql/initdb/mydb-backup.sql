@@ -79,7 +79,11 @@ CREATE TABLE `Car` (
 
 LOCK TABLES `Car` WRITE;
 /*!40000 ALTER TABLE `Car` DISABLE KEYS */;
+<<<<<<< HEAD
 INSERT INTO `Car` VALUES ('dd1234','pink','2019-03-13',1,1254654557777),('กก1234','แดง','2018-09-10',2,1231231231231);
+=======
+INSERT INTO `Car` VALUES ('dd1458','sadfd','2019-05-14',6,12314564653),('ดด1234','Green','1995-05-19',1,12314564653);
+>>>>>>> afd61683980d42b96cb868b5878ca88aae254efd
 /*!40000 ALTER TABLE `Car` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -266,7 +270,11 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 -- Dump completed on 2019-05-05 16:43:44
 =======
 -- Dump completed on 2019-05-05 16:37:42
 >>>>>>> e38c7e7d820e66cfd892c29fa20baf6adefc2793
+=======
+-- Dump completed on 2019-05-06  8:45:43
+>>>>>>> afd61683980d42b96cb868b5878ca88aae254efd

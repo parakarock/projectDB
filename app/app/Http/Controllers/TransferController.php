@@ -98,14 +98,8 @@ class TransferController extends Controller
     public function update(Request $request, $id)
     {
          Car::where('Car_Licence', $id)->update( array('User'=>$request->get('User') ));
-        
-        
-        $data = DB::table('Car')
-                ->join('Brand','Brand.Brand_ID','=','Car.Brand')
-                ->select('Car.Car_Licence','Car.Car_Color','Brand.Brand_Name')
-                ->get();
 
-       return view('home.all',compact('data'));
+        return redirect('all')->with('success', 'บันทึกข้อมูลการโอนรถสำเร็จ!');
     }
 
     /**

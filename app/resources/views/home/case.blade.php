@@ -16,14 +16,23 @@
 
 
 @section('head')
-<li class="nav-item active">
+<li class="nav-item">
     <a class="nav-link" href="/">หน้าแรก</a>
 </li>
-<li class="nav-item">
+<li class="nav-item active">
     <a class="nav-link" href="/case">แจ้งความ
         <span class="sr-only">(current)</span>
     </a>
 </li>
+@endsection
+
+@section('flash-message')
+@if ($message = Session::get('success'))
+<div class="alert alert-success alert-block">
+	<button type="button" class="close" data-dismiss="alert">×</button>	
+        <strong>{{ $message }}</strong>
+</div>
+@endif
 @endsection
 
 @section('content')
@@ -50,21 +59,24 @@
                             </select>
                     </div>
                     <div class="text-left">
-                        <div class="col-sm-5">
+                        <div class="col-sm-5 form-group{{ $errors->has('Case_Detail') ? ' has-error' : '' }}">
                             <label for="Case_Detail">ข้อหา : </label>
                             <input type="text" name="Case_Detail" class="form-control">
+                            <small class="text-danger">{{ $errors->first('Case_Detail') }}</small>
                         </div>
                     </div>
                     <div class="text-left">
-                        <div class="col-sm-5">
+                        <div class="col-sm-5 form-group{{ $errors->has('Case_WhoName') ? ' has-error' : '' }}">
                             <label for="Case_WhoName">ชื่อผู้แจ้ง : </label>
                             <input type="text" name="Case_WhoName" class="form-control">
+                            <small class="text-danger">{{ $errors->first('Case_WhoName') }}</small>
                         </div>
                     </div>
                     <div class="text-left">
-                        <div class="col-sm-5">
+                        <div class="col-sm-5 form-group{{ $errors->has('Case_Phone') ? ' has-error' : '' }}">
                             <label for="Case_Phone">เบอร์โทรผู้แจ้ง : </label>
                             <input type="text" name="Case_Phone" class="form-control">
+                            <small class="text-danger">{{ $errors->first('Case_Phone') }}</small>
                         </div>
                     </div>
                     <div class="text-left">

@@ -36,7 +36,7 @@ class BrandController extends Controller
      */
     public function store(Request $request)
     {
-         $request->validate(
+         $rules = 
             [
                 'Brand_Name' => 'required|max:100',
                 'Brand_Genaration' => 'required|max:150',
@@ -45,8 +45,25 @@ class BrandController extends Controller
                 'Brand_Motor' => 'required|max:150',
                 'Brand_Gas' => 'required|max:150'
                 
-            ]
-            );
+            ];
+            
+         $customMessages = [
+                'Brand_Name.required' => 'กรุณากรอกชื่อยี่ห้อ',
+                'Brand_Name.max' => 'กรุณากรอกตัวอักษรไม่เกิน 100 หลัก',
+                'Brand_Genaration.required' => 'กรุณากรอกรุ่น',
+                'Brand_Genaration.max' => 'กรุณากรอกตัวอักษรไม่เกิน 150 ตัว',
+                'Brand_Year.required' => 'กรุณากรอกปีที่ผลิต',
+                'Brand_Year.max' => 'กรุณากรอกตัวอักษรไม่เกิน 4 ตัว',
+                'Brand_Type.required' => 'กรุณากรอกประเภทรถ',
+                'Brand_Type.max' => 'กรุณากรอกตัวอักษรไม่เกิน 150 ตัว',
+                'Brand_Motor.required' => 'กรุณากรอกเครื่องยนต์',
+                'Brand_Motor.max' => 'กรุณากรอกตัวอักษรไม่เกิน 150 ตัว',
+                'Brand_Gas.required' => 'กรุณากรอกแก๊สที่ใช้',
+                'Brand_Gas.max' => 'กรุณากรอกตัวอักษรไม่เกิน 150 ตัว'
+            ];
+
+             $this->validate($request, $rules, $customMessages);
+
 
         $brand = new Brand;
         $brand->Brand_Name = $request->get('Brand_Name');
@@ -61,7 +78,7 @@ class BrandController extends Controller
                 ->join('Brand','Brand.Brand_ID','=','Car.Brand')
                 ->select('Car.Car_Licence','Car.Car_Color','Brand.Brand_Name')
                 ->get();
-
+       return back()->with('success', 'บันทึกข้อมูลแบรนด์สำเร็จ!');
        return view('home.all',compact('data'));
     }
 

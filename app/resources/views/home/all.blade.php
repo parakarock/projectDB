@@ -30,7 +30,14 @@
 
 
 
-
+@section('flash-message')
+@if ($messager = Session::get('success'))
+<div class="alert alert-success alert-block">
+	<button type="button" class="close" data-dismiss="alert">×</button>	
+        <strong>{{ $messager }}</strong>
+</div>
+@endif
+@endsection
 
 
 

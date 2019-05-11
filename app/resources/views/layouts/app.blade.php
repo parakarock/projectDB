@@ -28,9 +28,11 @@
 <body background="https://i.pinimg.com/originals/58/b9/1e/58b91ecf69cc7b00b89a98d6700b67a8.jpg" width="100%" hight="100%">
 
     <div id="app">
-
+       
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-laravel">
+             
             <div class="container">
+                
                 <a class="navbar-brand js-scroll-trigger" href="{{ url('/') }}">
                     {{ config('app.name', 'car') }}
                 </a>
@@ -39,13 +41,13 @@
                     aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
+                    
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         @yield('head')
                     </ul>
-
+                        
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
@@ -83,8 +85,8 @@
         </nav>
 
         <main class="py-4">
-            @yield('content')
-
+            @include('flash-message')
+            @yield('content')   
         </main>
 
     </div>
