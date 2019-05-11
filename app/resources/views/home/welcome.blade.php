@@ -5,6 +5,12 @@
         font-size: 150%;
         color:#ffffff; }
 
+    div p { 
+        font-size: 150%;
+        color: #ECF0F1;
+        }
+
+
 </style>
 @endsection
 
@@ -29,12 +35,12 @@
         <div class="col-lg-12 text-center">
 
             <div class='a'>
-            <h1 class="mt-5">ค้นหาเจ้าของรถ</h1>
+            <h1  class="mt-5">ค้นหาเจ้าของรถ</h1>
 
-            <p class="lead">-------------------------------------------------------------</p>
+            <p class="lead">====================================================================================================</p>
             <div class="containe">
                 <div class="row">
-                    <div class="col-12 col-sm-6 col-md-10">
+                    <div class="col-10 col-sm-8 col-md-10">
                         <form action="/search" method="POST" role="search" class="card card-sm">
                             {{ csrf_field() }}
                             <div class="card-body row no-gutters align-items-center">
@@ -54,24 +60,25 @@
                         </form>
                     </div>
 
-                    <div class="col-6 col-md-2">
+                    <div class="col-2">
                         <div class="text-right">
-                            <br>
-                            <input type="button" value="All" class="btn btn-primary" style="width:110px;height:50px" onclick="window.location.href='/all'">
+                            
+                            <a class="btn btn-primary" href="/all" style="padding:20px 50px; margin-top: 15px;" >ข้อมูลทั้งหมด</a>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <br>
             @if(isset($details))
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Car_License</th>
-                        <th scope="col">Car_Color</th>
-                        <th scope="col">Brand_Name</th>
-                        <th scope="col">Operation</th>
+                        <th scope="col">ลำดับ</th>
+                        <th scope="col">ทะเบียนรถยนต์</th>
+                        <th scope="col">สี</th>
+                        <th scope="col">แบรนด์</th>
+                        <th scope="col">ตัวดำเนินการ</th>
                     </tr>
                 </thead>
                 <?php $i=1; ?> @foreach($details as $row)
@@ -83,7 +90,7 @@
                         <td>{{ $row->Car_Licence }}</td>
                         <td>{{ $row->Car_Color }}</td>
                         <td>{{ $row->Brand_Name }}</td>
-                        <td><a href="{{ route('home.edit',$row->Car_Licence) }}" class="btn btn-warning">Detail</a></td>
+                        <td><a href="{{ route('home.edit',$row->Car_Licence) }}" class="btn btn-warning">รายละเอียด</a></td>
                     </tr>
                 </tbody>
                 @endforeach
@@ -94,11 +101,11 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Car_License</th>
-                        <th scope="col">Car_Color</th>
-                        <th scope="col">Brand_Name</th>
-                        <th scope="col">Operation</th>
+                        <th scope="col">ลำดับ</th>
+                        <th scope="col">ทะเบียนรถยนต์</th>
+                        <th scope="col">สี</th>
+                        <th scope="col">แบรนด์</th>
+                        <th scope="col">ตัวดำเนินการ</th>
                     </tr>
                 </thead>
                 <?php $i=1; ?> @foreach($data as $row)
@@ -110,7 +117,7 @@
                         <td>{{ $row->Car_Licence }}</td>
                         <td>{{ $row->Car_Color }}</td>
                         <td>{{ $row->Brand_Name }}</td>
-                        <td><a href="{{ route('home.edit',$row->Car_Licence) }}" class="btn btn-warning">Detail</a></td>
+                        <td><a href="{{ route('home.edit',$row->Car_Licence) }}" class="btn btn-warning">รายละเอียด</a></td>
                     </tr>
                 </tbody>
                 @endforeach
