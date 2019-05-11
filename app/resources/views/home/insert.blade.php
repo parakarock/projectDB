@@ -167,16 +167,10 @@
                     <form method="post" action="{{ route('car.store') }}">
                         {{ csrf_field() }}
                         <div class="text-left">
-<<<<<<< HEAD
                             <div class="col-sm-5">
                                 <label for="Car_Licence">ทะเบียน : </label>
                                 <input type="text" name="Car_Licence" class="form-control">
                             </div>
-=======
-                            <label for="Car_Licence"> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ทะเบียน : </label>
-                            <input type="text" name="Car_Licence" class="from-control">
-                            <br>
->>>>>>> 24cce0c8d6a9c1f960fc90ae68453b0ca49f943a
                         </div>
 
                         <div class="text-left">
