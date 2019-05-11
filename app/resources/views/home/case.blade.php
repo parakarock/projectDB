@@ -1,9 +1,15 @@
 @extends('layouts.app')
 @section('css')
 <style>
-    div.a { 
+    div label { 
         font-size: 150%;
-        color:#ffffff; }
+        color: #F4D03F;
+        }
+    div p { 
+        font-size: 150%;
+        color: #F4D03F;
+        }
+
 
 </style>
 @endsection
@@ -35,7 +41,7 @@
         <div class="col-lg-12 text-center">
 
             <div class='a'>
-            <h1 class="mt-5">แจ้งความ</h1>
+            <h1 style="background-color:Violet; padding-top:10px; padding-bottom:10px;" class="mt-5">แจ้งความ</h1>
             <p class="lead">====================================================================================================</p>
             <div class="panel-heading">
                 <form method="post" action="">
@@ -84,7 +90,9 @@
                         </select>
                     </div>
                     <br>
-                    <button type="submit" class="btn btn-success">ตกลง</button>
+                    <div class="col-md-12 text-center">
+                        <button class="btn btn-lg btn-success" type="submit">ตกลง</button>
+                    </div>
                 </form>
             </div>
             </div>

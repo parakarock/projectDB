@@ -1,10 +1,19 @@
 @extends('layouts.app')
 @section('css')
 <style>
-    div.a {
+    div label { 
         font-size: 150%;
-        color: #ffffff;
-    }
+        color: #F4D03F;
+        }
+
+    div p { 
+        font-size: 150%;
+        color: #F4D03F;
+        }
+
+    h2 { 
+        color:#000080;
+        } 
 </style>
 @endsection
 
@@ -45,11 +54,12 @@
     <div class="row">
         <div class="col-lg-12 text-center">
             <div class='a'>
-                <h1 class="mt-5">Insert</h1>
-                <p class="lead">
-                    ====================================================================================================
-                </p>
-                <p class="lead">ข้อมูลเจ้าของรถ</p>
+                <h1 style="background-color:Violet; padding-top:10px; padding-bottom:10px;" class="mt-5">เพิ่มข้อมูล</h1>
+                <p class="lead">====================================================================================================</p>
+                
+                <div class="text-left">
+                <h2>---ข้อมูลเจ้าของรถ---</h2>
+                </div>
                 <div class="panel panel-default">
 
                     <div class="panel-heading">
@@ -124,12 +134,15 @@
                             </div>
 
                             <div>
-                                <button class="btn btn-lg btn-success" type="submit">Submit</button>
+                                <button class="btn btn-lg btn-success" type="submit">ตกลง</button>
                             </div>
                         </form>
-                        <p class="lead">-----------------------------------------------------------------------------
-                        </p>
-                        <p class="lead">ข้อมูลแบรนด์</p>
+
+                        <p class="lead">====================================================================================================</p>
+                        <div class="text-left">
+                        <h2>---ข้อมูลแบรนด์---</h2>
+                        </div>
+
                         <form method="post" action="{{ route('brand.store') }}">
                             {{ csrf_field() }}
                             <div class="text-left">
@@ -181,12 +194,15 @@
                             </div>
 
                             <div>
-                                <button class="btn btn-lg btn-success" type="submit">Submit</button>
+                                <button class="btn btn-lg btn-success" type="submit">ตกลง</button>
                             </div>
                         </form>
-                        <p class="lead">-----------------------------------------------------------------------------
-                        </p>
-                        <p class="lead">ข้อมูลรถยนต์</p>
+                        <p class="lead">====================================================================================================</p>
+                        
+                        <div class="text-left">
+                        <h2>---ข้อมูลรถยนต์---</h2>
+                        </div>
+                        
                         <form method="post" action="{{ route('car.store') }}">
                             {{ csrf_field() }}
                             <div class="text-left">
@@ -235,11 +251,12 @@
                                 </select>
                             </div>
 
-                            <div>
-                                <button class="btn btn-lg btn-success" type="submit">Submit</button>
+                            <br>
+                            <div class="col-md-12 text-center">
+                                <button class="btn btn-lg btn-success" type="submit">ตกลง</button>
                             </div>
                         </form>
-                    </div>
+                   </div>
                 </div>
             </div>
         </div>

@@ -2,10 +2,24 @@
 
 @section('css')
 <style>
-    div.a {
+    a#a { 
         font-size: 150%;
-        color: #ffffff;
-    }
+        color: #F4D03F;
+        }
+
+    a#b {
+        font-size: 150%;
+        color: #ECF0F1;
+        }
+
+    div p { 
+        font-size: 150%;
+        color: #F4D03F;
+        }
+
+    h2 { 
+        color:#000080;
+        } 
 </style>
 @endsection
 
@@ -31,48 +45,75 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-12 text-center">
-            <div class='a'>
-                <h1 class="mt-5">Transfer</h1>
-                <p class="lead">-------------------------------------------------------------</p>
+           
+            <h1 style="background-color:Violet; padding-top:10px; padding-bottom:10px;" class="mt-5">Transfer</h1>
+            <p class="lead">====================================================================================================</p>
 
-                <div class="panel-heading">
-                    <form method="post" action="{{ route('transfer.update',$value->Car_Licence) }}">
-                        @csrf
-                        @method("PUT")
-                        <h1>ข้อมูลเจ้าของรถ</h1>
+            <div class="panel-heading">
+                <form method="post" action="{{ route('transfer.update',$value->Car_Licence) }}">
+                    @csrf
+                    @method("PUT")
+                    <div class="text-left">
+                        <h2>---ข้อมูลเจ้าของรถ---</h2>
                         <div>
-                            <p class="text-left">เลขประจำตัวประชาชน : {{ $value->User_Citizen }}</p>
-                            <p class="text-left">ชื่อ : {{ $value->User_Name }}</p>
-                            <p class="text-left">นามสกุล : {{ $value->User_Lname }}</p>
-                        </div>
+                        <a class="text" id='a'>เลขประจำตัวประชาชน :</a>
+                        <a class="text" id='b'> {{ $value->User_Citizen }} </a>
+                        <br>
+                        <a class="text" id='a'>ชื่อ : </a>
+                        <a class="text" id='b'> {{ $value->User_Name }} </a>
+                        <br>
+                        <a class="text" id='a'>นามสกุล : </a>
+                        <a class="text" id='b'> {{ $value->User_Lname }} </a>
+                        <br>
+                    </div>
+                    
                         <div class="text-left">
-                            <label for="User">เลือกเจ้าของใหม่ : </label>
+                            <label for="User" style="color: #F4D03F; font-size: 150%" >เลือกเจ้าของใหม่ : </label>
+                            <div class="col-sm-5">
                             <select name="User" class="form-control">
-                                @foreach($users as $row)
+                                @foreach($users as $row) 
                                 <option value="{{ $row->User_Citizen }}">{{ $row->User_Citizen }}</option>
                                 @endforeach
                             </select>
+                            </div>
                         </div>
+                            
+                        <p class="lead">====================================================================================================</p>
 
-                        <p class="lead">-------------------------------------------------------------</p>
-                        <h1>ข้อมูลรถ</h1>
+                        <h2>-----ข้อมูลรถ-----</h2>
 
-                        <p class="text-left">ทะเบียนรถยนต์ : {{ $value->Car_Licence }} </p>
-                        <p class="text-left">สีรถยนต์ :{{ $value->Car_Color }} </p>
-                        <p class="text-left">แบรนด์ :{{ $value->Brand_Name }} </p>
-                        <p class="text-left">รุ่น : {{ $value->Brand_Genaration }} </p>
-                        <p class="text-left">ปีที่ผลิต : {{ $value->Brand_Year }} </p>
-                        <p class="text-left">ประเภทรถยนต์ : {{ $value->Brand_Type }} </p>
-                        <p class="text-left">เครื่องยนต์ : {{ $value->Brand_Motor }} </p>
-                        <p class="text-left">น้ำมันที่ใช้ : {{ $value->Brand_Gas }} </p>
+                        <a class="text" id='a'>ทะเบียนรถยนต์ : </a>
+                        <a class="text" id='b'> {{ $value->Car_Licence }} </a>
+                        <br>
+                        <a class="text" id='a'>สีรถยนต์ : </a>
+                        <a class="text" id='b'> {{ $value->Car_Color }} </a>
+                        <br>
+                        <a class="text" id='a'>แบรนด์ : </a>
+                        <a class="text" id='b'> {{ $value->Brand_Name }} </a>
+                        <br>
+                        <a class="text" id='a'>รุ่น : </a>
+                        <a class="text" id='b'> {{ $value->Brand_Genaration }} </a>
+                        <br>
+                        <a class="text" id='a'>ปีที่ผลิต : </a>
+                        <a class="text" id='b'> {{ $value->Brand_Year }} </a>
+                        <br>
+                        <a class="text" id='a'>ประเภทรถยนต์ : </a>
+                        <a class="text" id='b'> {{ $value->Brand_Type }} </a>
+                        <br>
+                        <a class="text" id='a'>เครื่องยนต์ : </a>
+                        <a class="text" id='b'> {{ $value->Brand_Motor }} </a>
+                        <br>
+                        <a class="text" id='a'>น้ำมันที่ใช้ : </a>
+                        <a class="text" id='b'> {{ $value->Brand_Gas }} </a>
 
 
                         <div class="text-right">
-                            <button class="btn btn-lg btn-success" type="submit">Save</button>
+                            <button class="btn btn-lg btn-success" type="submit">บันทึก</button>
                         </div>
-                    </form>
-                </div>
-            </div>
+
+                    
+                </form>
+             </div>
         </div>
     </div>
 </div>

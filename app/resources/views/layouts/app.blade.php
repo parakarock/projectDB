@@ -25,7 +25,7 @@
 
 </head>
 
-<body background="https://i.pinimg.com/564x/a3/59/87/a359872dce67969e72894953ab6d4ee4.jpg" width="30%" hight="30%">
+<body background="https://i.pinimg.com/originals/58/b9/1e/58b91ecf69cc7b00b89a98d6700b67a8.jpg" width="100%" hight="100%">
 
     <div id="app">
        

@@ -1,9 +1,16 @@
 @extends('layouts.app')
 @section('css')
 <style>
+
     div.a { 
         font-size: 150%;
         color:#ffffff; }
+    div p { 
+        font-size: 150%;
+        color: #ECF0F1;
+        }
+
+    
 
 </style>
 @endsection
@@ -43,12 +50,12 @@
 
             <div class='a'>
             <h1 class="mt-5">ข้อมูลรถยนต์ทั้งหมด</h1>
-            <p class="lead">-------------------------------------------------------------</p>
-            <div class="containe">
+            <p class="lead">====================================================================================================</p>
+            <div class="container">
                 <div class="row">
 
 
-                    <div class="col-12 col-sm-6 col-md-8">
+                    <div class="col-10 col-sm-8 col-md-10">
                         <form action="/search2" method="POST" role="search" class="card card-sm">
                             {{ csrf_field() }}
                             <div class="card-body row no-gutters align-items-center">
@@ -70,28 +77,23 @@
                         </form>
                     </div>
 
-                    <div class="col-6 col-md-2">
+                    <div class="col-2">
                         <div class="text-right">
-                            <br>
-                            <button type="button" class="btn btn-primary" style="width:110px;height:50px"
-                                href="/all">All</button>
+                            <a href="{{ route('car.create') }}" class="btn btn-primary" style="padding:20px 50px; margin-top: 15px;" >เพิ่มข้อมูล</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="text-left">
-                <br>
-                <a href="{{ route('car.create') }}" class="btn btn-success">Insert</a>
-            </div>
+           
             <br> @if(isset($details))
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Car_License</th>
-                        <th scope="col">Car_Color</th>
-                        <th scope="col">Brand_Name</th>
-                        <th scope="col" colspan='2'>Operation</th>
+                        <th scope="col">ลำดับ</th>
+                        <th scope="col">ทะเบียนรถยนต์</th>
+                        <th scope="col">สี</th>
+                        <th scope="col">แบรนด์</th>
+                        <th scope="col" colspan='3'>ตัวดำเนินการ</th>
                     </tr>
                 </thead>
                 <?php $i=1; ?> @foreach($details as $row)
@@ -103,12 +105,12 @@
                         <td>{{ $row->Car_Licence }}</td>
                         <td>{{ $row->Car_Color }}</td>
                         <td>{{ $row->Brand_Name }}</td>
-                        <td><a href="{{ route('car.edit',$row->Car_Licence) }}" class="btn btn-warning">Edit</a></td>
-                        <td><a href="{{ route('home.update',$row->Car_Licence) }}" class="btn btn-secondary">Transfer</a></td>
+                        <td><a href="{{ route('car.edit',$row->Car_Licence) }}" class="btn btn-warning">แก้ไข</a></td>
+                        <td><a href="{{ route('home.update',$row->Car_Licence) }}" class="btn btn-dark">โอนรถ</a></td>
                         <td>
                             <form action="{{ route('home.destroy',$row->Car_Licence) }}" method="post">
                                 @csrf @method("DELETE")
-                                <button class="btn btn-danger">Delete</button>
+                                <button class="btn btn-danger">ลบ</button>
                             </form>
                     </tr>
                 </tbody>
@@ -120,11 +122,11 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Car_License</th>
-                        <th scope="col">Car_Color</th>
-                        <th scope="col">Brand_Name</th>
-                        <th scope="col" colspan='2'>Operation</th>
+                    <th scope="col">ลำดับ</th>
+                        <th scope="col">ทะเบียนรถยนต์</th>
+                        <th scope="col">สี</th>
+                        <th scope="col">แบรนด์</th>
+                        <th scope="col" colspan='3'>ตัวดำเนินการ</th>
                     </tr>
                 </thead>
                 <?php $i=1; ?> @foreach($data as $row)
@@ -136,13 +138,13 @@
                         <td>{{ $row->Car_Licence }}</td>
                         <td>{{ $row->Car_Color }}</td>
                         <td>{{ $row->Brand_Name }}</td>
-                        <td><a href="{{ route('car.edit',$row->Car_Licence) }}" class="btn btn-warning">Edit</a></td>
-                        <td><a href="{{ route('transfer.show',$row->Car_Licence) }}" class="btn btn-secondary">Transfer</a></td>
+                        <td><a href="{{ route('car.edit',$row->Car_Licence) }}" class="btn btn-warning">แก้ไข</a></td>
+                        <td><a href="{{ route('transfer.show',$row->Car_Licence) }}" class="btn btn-dark">โอนรถ</a></td>
                         <td>
                             <form action="{{ route('car.destroy',$row->Car_Licence) }}" method="post">
                                 @csrf @method("DELETE")
 
-                                <button class="btn btn-danger">Delete</button>
+                                <button class="btn btn-danger">ลบ</button>
                             </form>
                     </tr>
                 </tbody>

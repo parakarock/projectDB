@@ -1,9 +1,27 @@
 @extends('layouts.app')
 @section('css')
 <style>
-    div.a { 
+    a#a { 
         font-size: 150%;
-        color:#ffffff; }
+        color: #F4D03F;
+        }
+
+    a#b {
+        font-size: 150%;
+        color: #ECF0F1;
+        }
+
+    div p { 
+        font-size: 150%;
+        color: #F4D03F;
+        }
+
+    h2 { 
+        color:#000080;
+        } 
+    
+
+
 
 </style>
 @endsection
@@ -31,25 +49,41 @@
     <div class="row">
         <div class="col-lg-12 text-center">
 
-            <div class='a'> 
-            <h1 class="mt-5">Edit</h1>
-            <p class="lead">-------------------------------------------------------------</p>
-            <h1>ข้อมูลรถ</h1>
-            <p class="text-left">ทะเบียนรถยนต์ : {{ $item->Car_Licence }} </p>
-            <p class="text-left">สีรถยนต์ :{{ $item->Car_Color }} </p>
-            <p class="text-left">แบรนด์ :{{ $item->Brand_Name }} </p>
-            <p class="text-left">รุ่น : {{ $item->Brand_Genaration }} </p>
-            <p class="text-left">ปีที่ผลิต : {{ $item->Brand_Year }} </p>
-            <p class="text-left">ประเภทรถยนต์ : {{ $item->Brand_Type }} </p>
-            <p class="text-left">เครื่องยนต์ : {{ $item->Brand_Motor }} </p>
-            <p class="text-left">น้ำมันที่ใช้ : {{ $item->Brand_Gas }} </p>
+            <h1 style="background-color:Violet; padding-top:10px; padding-bottom:10px;" class="mt-5">แก้ไขข้อมูล</h1>
+            <p class="lead">====================================================================================================</p>
+            <div class="text-left">
+            <h2>-----ข้อมูลรถ-----</h2>
+
+            <a class="text" id='a' >ทะเบียนรถยนต์ : </a>
+            <a class="text" id='b' > {{ $item->Car_Licence }} </a>
             <br>
-            <p class="lead">-------------------------------------------------------------</p>
-            <h1>ข้อมูลเจ้าของรถ</h1>
+            <a class="text" id='a'>สีรถยนต์ : </a>
+            <a class="text" id='b'> {{ $item->Car_Color }} </a>
+            <br>
+            <a class="text" id='a'>แบรนด์ : </a>
+            <a class="text" id='b'> {{ $item->Brand_Name }} </a>
+            <br>
+            <a class="text" id='a'>รุ่น : </a>
+            <a class="text" id='b'> {{ $item->Brand_Genaration }} </a>
+            <br>
+            <a class="text" id='a'>ปีที่ผลิต : </a>
+            <a class="text" id='b'> {{ $item->Brand_Year }} </a>
+            <br>
+            <a class="text" id='a'>ประเภทรถยนต์ : </a>
+            <a class="text" id='b'> {{ $item->Brand_Type }} </a>
+            <br>
+            <a class="text" id='a'>เครื่องยนต์ : </a>
+            <a class="text" id='b'> {{ $item->Brand_Motor }} </a>
+            <br>
+            <a class="text" id='a'>น้ำมันที่ใช้ : </a>
+            <a class="text" id='b'> {{ $item->Brand_Motor }} </a>
+            <br>
+            <p class="lead">====================================================================================================</p>
+            <h2>---ข้อมูลเจ้าของรถ---</h2>
             <form method="post" action="{{ route('car.update',$item->User_Citizen) }}">
                 @csrf
                 @method("PUT")
-                <div class="form-group" >
+                <div class="form-group{{ $errors->has('User_Citizen') ? ' has-error' : '' }}" >
                     <p class="text-left" for="User_Citizen">เลขประจำตัวประชาชน : </p>
                     <input type="text" class="form-control" value='{{ $item->User_Citizen }}' readonly>
                 </div>
@@ -88,19 +122,27 @@
                     <input type="text" name="User_Address" class="form-control" value='{{ $item->User_Address }}'>
                      <small class="text-danger">{{ $errors->first('User_Address') }}</small>
                 </div>
-                <br>
-                <div class="text-right">
-                    <button class="btn btn-lg btn-success" type="submit">Save</button>
                 </div>
+                <br>
+                <div class="form-group">
+                <div class="text-center">
+                    <button class="btn btn-lg btn-success" type="submit">บันทึก</button>
+                </div>
+                
+                </div>
+                    
             </form>
             <br>
-            <p class="lead">-------------------------------------------------------------</p>
-            <h1>คดี</h1>
-            @if (count($case) === 0) ไม่พบข้อมูล @else @foreach ($case as $value)
-            <p class="text-left">ข้อหา : {{ $value->Case_Detail }} </p>
-            <p class="text-left">วันที่แจ้ง : {{ $value->Case_Date }} </p>
-            @endforeach @endif
+            <p class="lead">====================================================================================================</p>
+            <h2>------คดี------</h2>
+            @if (count($case) === 0) <a class="text" style="color: MAROON; font-size: 130%">ไม่พบข้อมูล</a> @else @foreach ($case as $value)
+            <a class="text" id='a'>ข้อหา : </a>
+            <a class="text" id='b'> {{ $value->Case_Detail }} </a>
+            <br>
+            <a class="text" id='a'>วันที่แจ้ง : </a>
+            <a class="text" id='b'> {{ $value->Case_Date }} </a>
 
+            @endforeach @endif
             </div>
 
 
