@@ -26,12 +26,12 @@
 
 @section('head')
 <li class="nav-item active">
-    <a class="nav-link" href="#">หน้าแรก
+    <a class="nav-link" href="/">หน้าแรก
         <span class="sr-only">(current)</span>
     </a>
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="#">แจ้งความ</a>
+    <a class="nav-link" href="/case">แจ้งความ</a>
 </li>
 @endsection
 
