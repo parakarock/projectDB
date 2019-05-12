@@ -46,7 +46,7 @@
     <div class="row">
         <div class="col-lg-12 text-center">
            
-            <h1 style="background-color:Violet; padding-top:10px; padding-bottom:10px;" class="mt-5">Transfer</h1>
+            <h1 style="background-color:Violet; padding-top:10px; padding-bottom:10px;" class="mt-5">โอนรถ</h1>
             <p class="lead">====================================================================================================</p>
 
             <div class="panel-heading">
