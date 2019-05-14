@@ -141,13 +141,18 @@
                     <p class="text-left" for="User_Address">ที่อยู่ : </p>
                     <input type="text" name="User_Address" class="form-control" value='{{ $item->User_Address }}'>
                     <small class="text-danger">{{ $errors->first('User_Address') }}</small>
-                    <<<<<<< HEAD </div>======= </div> </div>>>>>>>> 7da9aa4c53f950b75fc545bb9d34029f2f815a1a <br>
-                        <div class="form-group">
-                            <div class="text-center">
-                                <button class="btn btn-lg btn-success" type="submit">บันทึก</button>
-                            </div>
-                        </div>
-                        <<<<<<< HEAD=======>>>>>>> 7da9aa4c53f950b75fc545bb9d34029f2f815a1a
+                </div>
+            </div>
+
+
+            <br>
+            <div class="form-group">
+                <div class="text-center">
+                    <button class="btn btn-lg btn-success" type="submit">บันทึก</button>
+                </div>
+            </div>
+
+
         </form>
 
         <br>
