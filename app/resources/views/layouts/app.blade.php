@@ -23,9 +23,18 @@
     @yield('css')
 
 
+    <style>
+        body {
+	        background: url('https://i.pinimg.com/originals/58/b9/1e/58b91ecf69cc7b00b89a98d6700b67a8.jpg');
+	        background-size: 100%;
+            }
+    </style>
+
+
 </head>
 
-<body background="https://i.pinimg.com/originals/58/b9/1e/58b91ecf69cc7b00b89a98d6700b67a8.jpg" width="100%" hight="100%">
+
+<body>
 
     <div id="app">
        

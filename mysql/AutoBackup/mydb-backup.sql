@@ -79,10 +79,114 @@ CREATE TABLE `Car` (
 
 LOCK TABLES `Car` WRITE;
 /*!40000 ALTER TABLE `Car` DISABLE KEYS */;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+INSERT INTO `Car` VALUES ('dd1234','pink','2019-03-13',1,1254654557777),('กก1234','แดง','2018-09-10',2,1231231231231);
+=======
+INSERT INTO `Car` VALUES ('dd1458','sadfd','2019-05-14',6,12314564653),('ดด1234','Green','1995-05-19',1,12314564653);
+>>>>>>> afd61683980d42b96cb868b5878ca88aae254efd
+>>>>>>> 7da9aa4c53f950b75fc545bb9d34029f2f815a1a
 /*!40000 ALTER TABLE `Car` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
+<<<<<<< HEAD
+=======
+-- Table structure for table `Case`
+--
+
+DROP TABLE IF EXISTS `Case`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Case` (
+  `Case_ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `Case_Detail` char(200) COLLATE utf8_unicode_ci NOT NULL,
+  `Case_WhoName` char(100) COLLATE utf8_unicode_ci NOT NULL,
+  `Case_Phone` double NOT NULL,
+  `OwnerCar` char(6) COLLATE utf8_unicode_ci NOT NULL,
+  `Station` bigint(20) unsigned NOT NULL,
+  `Case_Date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`Case_ID`),
+  KEY `case_ownercar_foreign` (`OwnerCar`),
+  KEY `case_station_foreign` (`Station`),
+  CONSTRAINT `case_ownercar_foreign` FOREIGN KEY (`OwnerCar`) REFERENCES `Car` (`Car_Licence`),
+  CONSTRAINT `case_station_foreign` FOREIGN KEY (`Station`) REFERENCES `PoliceStation` (`Station_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Case`
+--
+
+LOCK TABLES `Case` WRITE;
+/*!40000 ALTER TABLE `Case` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Case` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `PoliceStation`
+--
+
+DROP TABLE IF EXISTS `PoliceStation`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `PoliceStation` (
+  `Station_ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `Station_Name` char(50) COLLATE utf8_unicode_ci NOT NULL,
+  `Station_Province` char(50) COLLATE utf8_unicode_ci NOT NULL,
+  `Station_Post` double NOT NULL,
+  `Station_Phone` double NOT NULL,
+  `Station_Address` char(150) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`Station_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `PoliceStation`
+--
+
+LOCK TABLES `PoliceStation` WRITE;
+/*!40000 ALTER TABLE `PoliceStation` DISABLE KEYS */;
+/*!40000 ALTER TABLE `PoliceStation` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Users`
+--
+
+DROP TABLE IF EXISTS `Users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Users` (
+  `User_Citizen` double NOT NULL,
+  `User_Name` char(50) COLLATE utf8_unicode_ci NOT NULL,
+  `User_Lname` char(50) COLLATE utf8_unicode_ci NOT NULL,
+  `User_BirthDay` date NOT NULL,
+  `User_Country` char(50) COLLATE utf8_unicode_ci NOT NULL,
+  `User_Province` char(50) COLLATE utf8_unicode_ci NOT NULL,
+  `User_Post` double NOT NULL,
+  `User_Address` char(150) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`User_Citizen`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Users`
+--
+
+LOCK TABLES `Users` WRITE;
+/*!40000 ALTER TABLE `Users` DISABLE KEYS */;
+<<<<<<< HEAD
+INSERT INTO `Users` VALUES (1231231231231,'Grim','Sann','1999-06-16','ไทย','ชลบุรี',20130,'11/74 ม.11 ต.แสนสุข อ.เมือง'),(1254654557777,'Timmy','jett','1995-05-19','ไทย','ชลบุรี',20130,'14/11 ม.2 ต.แสนสุข อ.เมือง');
+=======
+INSERT INTO `Users` VALUES (1231564654,'efsdffsd','gbfgbfg','2019-05-14','thai','tin',1554,'dfggsfhsgafdssdfsdfds'),(5282752424,'gdgfsdf','gbfgbfg','2019-05-23','thai','tin',2165,'dfggsfhsgafdssdfsdfds'),(6354245245,'efsdffsd','tttt','2019-05-17','thai','tin',2165,'dfggsfhsgafdssdfsdfds'),(11545616545,'sdfsdfsdf','bgnsgsfdgdfs','2019-05-22','ty','tin',2165,'dfggsfhsgafdssdfsdfds'),(12314564653,'werssds','ttttdfgdf','2019-05-13','ty','tin',2165,'dfggsfhsgafds'),(16515126125,'fhrtgsfd','hdfghsfg','2019-05-17','thai','tin',2165,'dfggsfhsgafds'),(123156465489,'sdfsdfsdf','gbfgbfg','2019-05-16','ty','tin',2165,'dfggsfhsgafdssdfsdfds'),(123456465465,'wegdfgsdf','dgeshaer','2019-05-17','thai','tin',2165,'dfggsfhsgafdssdfsdfds'),(1142356465455,'er','tttt','2019-05-23','thai','tin',2165,'dfggsfhsgafds'),(1234567894555,'Timmy','Yell','2019-05-08','Thailand','Bangkok',11520,'dfhdsfgdafdsafdfgfds');
+>>>>>>> e38c7e7d820e66cfd892c29fa20baf6adefc2793
+/*!40000 ALTER TABLE `Users` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+>>>>>>> 7da9aa4c53f950b75fc545bb9d34029f2f815a1a
 -- Table structure for table `migrations`
 --
 
@@ -158,6 +262,10 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+<<<<<<< HEAD
+=======
+INSERT INTO `users` VALUES (1,'chanok','59160742@go.buu.ac.th',NULL,'$2y$10$zHSGlzvAGSREyXNTy.ZJve2aOUcy2O6hIF81FpiqtUYKl0Xr2DX6O',NULL,'2019-05-05 07:04:38','2019-05-05 07:04:38');
+>>>>>>> 7da9aa4c53f950b75fc545bb9d34029f2f815a1a
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -170,4 +278,16 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+<<<<<<< HEAD
 -- Dump completed on 2019-05-12 11:39:41
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+-- Dump completed on 2019-05-05 16:43:44
+=======
+-- Dump completed on 2019-05-05 16:37:42
+>>>>>>> e38c7e7d820e66cfd892c29fa20baf6adefc2793
+=======
+-- Dump completed on 2019-05-06  8:45:43
+>>>>>>> afd61683980d42b96cb868b5878ca88aae254efd
+>>>>>>> 7da9aa4c53f950b75fc545bb9d34029f2f815a1a

@@ -26,12 +26,12 @@
 
 @section('head')
 <li class="nav-item active">
-    <a class="nav-link" href="#">หน้าแรก
+    <a class="nav-link" href="/">หน้าแรก
         <span class="sr-only">(current)</span>
     </a>
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="#">แจ้งความ</a>
+    <a class="nav-link" href="/case">แจ้งความ</a>
 </li>
 @endsection
 
@@ -46,7 +46,7 @@
     <div class="row">
         <div class="col-lg-12 text-center">
            
-            <h1 style="background-color:Violet; padding-top:10px; padding-bottom:10px;" class="mt-5">Transfer</h1>
+            <h1 style="background-color:Violet; padding-top:10px; padding-bottom:10px;" class="mt-5">โอนรถ</h1>
             <p class="lead">====================================================================================================</p>
 
             <div class="panel-heading">
