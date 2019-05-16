@@ -30,7 +30,7 @@ class CarController extends Controller
                 ->select('User_Citizen')
                 ->get();
         $brands = DB::table('Brand')
-                ->select('Brand_ID','Brand_Name')
+                ->select('Brand_ID','Brand_Genaration')
                 ->get();
 
        return view('home.insert',compact('users','brands'));

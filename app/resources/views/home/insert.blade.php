@@ -21,12 +21,13 @@
 
 @section('head')
 <li class="nav-item active">
-    <a class="nav-link" href="/">หน้าแรก
+    <a class="nav-link" href="/"><i class="fa fa-home"></i> หน้าแรก
         <span class="sr-only">(current)</span>
     </a>
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="/case">แจ้งความ</a>
+    <a class="nav-link" href="/case"><i class="fa fa-pencil"></i> แจ้งความ </a>
+    <!-- <a class="nav-link" href="/case">แจ้งความ</a> -->
 </li>
 
 @endsection
@@ -141,7 +142,7 @@
                             </div>
 
                             <div>
-                                <button class="btn btn-lg btn-success" type="submit">ตกลง</button>
+                                <button class="btn btn-lg btn-success" type="submit"><i class="fa fa-save"></i> บันทึก</button>
                             </div>
                         </form>
 
@@ -201,7 +202,7 @@
                             </div>
 
                             <div>
-                                <button class="btn btn-lg btn-success" type="submit">ตกลง</button>
+                                <button class="btn btn-lg btn-success" type="submit"><i class="fa fa-save"></i> บันทึก</button>
                             </div>
                         </form>
                         <p class="lead">====================================================================================================</p>
@@ -253,14 +254,14 @@
                                     <select name="Brand" class="form-control">
                                 </div>
                                 @foreach($brands as $row)
-                                <option value="{{ $row->Brand_ID }}">{{ $row->Brand_Name }}</option>
+                                <option value="{{ $row->Brand_ID }}">{{ $row->Brand_Genaration }}</option>
                                 @endforeach
                                 </select>
                             </div>
 
                             <br>
                             <div class="col-md-12 text-center">
-                                <button class="btn btn-lg btn-success" type="submit">ตกลง</button>
+                                <button class="btn btn-lg btn-success" type="submit"><i class="fa fa-save"></i> บันทึก </button>
                             </div>
                         </form>
                    </div>

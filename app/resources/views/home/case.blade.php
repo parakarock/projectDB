@@ -17,10 +17,11 @@
 
 @section('head')
 <li class="nav-item">
-    <a class="nav-link" href="/">หน้าแรก</a>
+    <a class="nav-link" href="/"><i class="fa fa-home"></i> หน้าแรก</a>
+    <!-- <a class="nav-link" href="/">หน้าแรก -->
 </li>
 <li class="nav-item active">
-    <a class="nav-link" href="/case">แจ้งความ
+    <a class="nav-link" href="/case"><i class="fa fa-pencil"></i> แจ้งความ
         <span class="sr-only">(current)</span>
     </a>
 </li>
@@ -91,7 +92,7 @@
                     </div>
                     <br>
                     <div class="col-md-12 text-center">
-                        <button class="btn btn-lg btn-success" type="submit">ตกลง</button>
+                        <button class="btn btn-lg btn-success" type="submit"><i class="fa fa-save"></i> บันทึก</button>
                     </div>
                 </form>
             </div>

@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('css')
+
 <style>
     div.a {
         font-size: 150%;
@@ -17,12 +18,12 @@
 
 @section('head')
 <li class="nav-item active">
-    <a class="nav-link" href="/">หน้าแรก
+    <a class="nav-link" href="/"><i class="fa fa-home"></i> หน้าแรก
         <span class="sr-only">(current)</span>
     </a>
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="/case">แจ้งความ</a>
+    <a class="nav-link" href="/case"><i class="fa fa-pencil"></i> แจ้งความ </a>
 </li>
 @endsection
 
@@ -113,12 +114,8 @@
                             <td><a href="{{ route('home.update',$row->Car_Licence) }}" class="btn btn-dark">โอนรถ</a>
                             </td>
                             <td>
-                                 {{-- <form id="delete" action="{{ route('car.destroy',$row->Car_Licence) }}"
-                                method="post">
-                                @csrf @method("DELETE")
-                                <button class="btn btn-danger">ลบ</button>
-                                </form> --}}
-                                <form class="delete" action="{{ route('car.destroy',$row->Car_Licence) }}" method="POST">
+                                <form class="delete" action="{{ route('car.destroy',$row->Car_Licence) }}"
+                                    method="POST">
                                     <input type="hidden" name="_method" value="DELETE">
                                     {{ csrf_field() }}
                                     <input type="submit" value="Delete User">
@@ -149,17 +146,15 @@
                             <td>{{ $row->Car_Licence }}</td>
                             <td>{{ $row->Car_Color }}</td>
                             <td>{{ $row->Brand_Name }}</td>
-                            <td><a href="{{ route('car.edit',$row->Car_Licence) }}" class="btn btn-warning">แก้ไข <i class="fas fa-edit"></i></a>
+                            <td><a href="{{ route('car.edit',$row->Car_Licence) }}" class="btn btn-warning">แก้ไข <i
+                                        class="fas fa-edit"></i></a>
                             </td>
-                            <td><a href="{{ route('transfer.show',$row->Car_Licence) }}" class="btn btn-dark">โอนรถ <i class="fas fa-exchange-alt"></i></a>
+                            <td><a href="{{ route('transfer.show',$row->Car_Licence) }}" class="btn btn-dark">โอนรถ <i
+                                        class="fas fa-exchange-alt"></i></a>
                             </td>
                             <td>
-                                {{-- <form id="delete" action="{{ route('car.destroy',$row->Car_Licence) }}"
-                                method="post">
-                                @csrf @method("DELETE")
-                                <button class="btn btn-danger">ลบ</button>
-                                </form> --}}
-                                <form class="delete" action="{{ route('car.destroy',$row->Car_Licence) }}" method="POST">
+                                <form class="delete" action="{{ route('car.destroy',$row->Car_Licence) }}"
+                                    method="POST">
                                     <input type="hidden" name="_method" value="DELETE">
                                     {{ csrf_field() }}
                                     <button class="btn btn-danger">Delete <i class="fas fa-trash-alt"></i></button>
