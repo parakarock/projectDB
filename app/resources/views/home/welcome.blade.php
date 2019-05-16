@@ -2,7 +2,6 @@
 @section('css')
 <style>
     div.a {
-        /* font-style: ChulaNarak; */
         font-size: 150%;
         color: #ffffff;
     }
