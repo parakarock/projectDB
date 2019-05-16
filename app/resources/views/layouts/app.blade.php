@@ -9,6 +9,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+   
     <title>{{ config('app.name', 'Car') }}</title>
 
     <!-- Scripts -->
@@ -21,6 +22,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @yield('css')
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
     <style>
@@ -42,7 +45,7 @@
              
             <div class="container">
                 
-                <a class="navbar-brand js-scroll-trigger" href="{{ url('/') }}">
+                <a class="navbar-brand js-scroll-trigger" href="{{ url('/') }}"><i class="fa fa-car"></i>
                     {{ config('app.name', 'car') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"

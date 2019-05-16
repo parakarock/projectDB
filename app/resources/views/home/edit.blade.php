@@ -30,12 +30,12 @@
 
 @section('head')
 <li class="nav-item active">
-    <a class="nav-link" href="/">หน้าแรก
+    <a class="nav-link" href="/"><i class="fa fa-home"></i> หน้าแรก
         <span class="sr-only">(current)</span>
     </a>
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="/case">แจ้งความ</a>
+    <a class="nav-link" href="/case"><i class="fa fa-pencil"></i> แจ้งความ </a>
 </li>
 @endsection
 
@@ -77,7 +77,7 @@
             <a class="text" id='b'> {{ $item->Brand_Motor }} </a>
             <br>
             <a class="text" id='a'>น้ำมันที่ใช้ : </a>
-            <a class="text" id='b'> {{ $item->Brand_Motor }} </a>
+            <a class="text" id='b'> {{ $item->Brand_Gas }} </a>
             <br>
             </div> 
 
@@ -115,7 +115,7 @@
 
                 <div class="form-group{{ $errors->has('User_BirthDay') ? ' has-error' : '' }}">
                     <p class="text-left" for="User_BirthDay">วันเกิด : </p>
-                    <input type="date" name="User_BirthDay" class="form-control" value='{{ $item->User_BirthDay }}'>
+                    <input type="date" name="User_BirthDay" class="form-control" value='{{ $item->User_BirthDay }}' readonly>
                     <small class="text-danger">{{ $errors->first('User_BirthDay') }}</small>
                 </div>
 
@@ -149,7 +149,7 @@
                 <br>
                 <div class="form-group">
                     <div class="text-center">
-                        <button class="btn btn-lg btn-success" type="submit">บันทึก</button>
+                        <button class="btn btn-lg btn-success" type="submit"><i class="fa fa-save"></i> บันทึก </button>
                     </div>
                 </div>
                  
@@ -157,6 +157,8 @@
             </form>
             
             <br>
+
+            <div class="text-left">
             <p class="lead">====================================================================================================</p>
             <h2>------คดี------</h2>
             @if (count($case) === 0) <a class="text" style="color: MAROON; font-size: 130%">ไม่พบข้อมูล</a> @else @foreach ($case as $value)
@@ -165,9 +167,10 @@
             <br>
             <a class="text" id='a'>วันที่แจ้ง : </a>
             <a class="text" id='b'> {{ $value->Case_Date }} </a>
+            </div>
 
             @endforeach @endif
-            </div>
+        </div>
 
 
         </div>

@@ -39,7 +39,7 @@ CREATE TABLE `Brand` (
   `Brand_Motor` char(150) COLLATE utf8_unicode_ci NOT NULL,
   `Brand_Gas` char(150) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`Brand_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -48,7 +48,7 @@ CREATE TABLE `Brand` (
 
 LOCK TABLES `Brand` WRITE;
 /*!40000 ALTER TABLE `Brand` DISABLE KEYS */;
-INSERT INTO `Brand` VALUES (1,'Toyota','Toyota Vios 1.5 Entry My19 วีออส',2019,'รถเก๋ง 4 ประตู','เครื่องยนต์ 1,496 cc., ขับเคลื่อนล้อหน้า, เกียร์ออโต้แบบ CVT (พร้อม Sequential Shift)','เบนซิน 95, เบนซิน 91, แก๊สโซฮอล์ 95 (E10), แก๊สโซฮอล์ 91, เบนซิน E20, เบนซิน E85'),(2,'Mercedes-benz','Mercedes-benz S-Class S 350 d Exclusive เอส-คลาส',2019,'รถเก๋ง 4 ประตู, รถไฮบริด','เครื่องยนต์ 2,925 cc., ขับเคลื่อนล้อหลัง, เกียร์อัตโนมัติ 9AT (9G-Tronic)','ดีเซล');
+INSERT INTO `Brand` VALUES (1,'Toyota','Toyota Vios 1.5 Entry My19 วีออส',2019,'รถเก๋ง 4 ประตู','เครื่องยนต์ 1,496 cc., ขับเคลื่อนล้อหน้า, เกียร์ออโต้แบบ CVT (พร้อม Sequential Shift)','เบนซิน 95, เบนซิน 91, แก๊สโซฮอล์ 95 (E10), แก๊สโซฮอล์ 91, เบนซิน E20, เบนซิน E85'),(2,'Mercedes-benz','Mercedes-benz S-Class S 350 d Exclusive เอส-คลาส',2019,'รถเก๋ง 4 ประตู, รถไฮบริด','เครื่องยนต์ 2,925 cc., ขับเคลื่อนล้อหลัง, เกียร์อัตโนมัติ 9AT (9G-Tronic)','ดีเซล'),(3,'BMW','BMW Series 3 320d Sport MY19 ซีรีส์3',2019,'รถเก๋ง 4 ประตู','เครื่องยนต์ 1,995 cc., ขับเคลื่อนล้อหลัง, เกียร์ออโต้ 8AT (พร้อม Steptronic Sport)','ดีเซล, ไบโอดีเซล B5'),(4,'Mercedes-benz','Mercedes-benz S-Class S 350 d Exclusive เอส-คลาส',2018,'รถเก๋ง 4 ประตู, รถไฮบริด','เครื่องยนต์ 2,925 cc., ขับเคลื่อนล้อหลัง, เกียร์อัตโนมัติ 9AT (9G-Tronic)','ดีเซล'),(5,'Mercedes-benz','Mercedes-benz S-Class S 350 d Exclusive เอส-คลาส',2019,'รถเก๋ง 4 ประตู, รถไฮบริด','เครื่องยนต์ 2,925 cc., ขับเคลื่อนล้อหลัง, เกียร์อัตโนมัติ 9AT (9G-Tronic)','ดีเซล');
 /*!40000 ALTER TABLE `Brand` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -79,11 +79,7 @@ CREATE TABLE `Car` (
 
 LOCK TABLES `Car` WRITE;
 /*!40000 ALTER TABLE `Car` DISABLE KEYS */;
-<<<<<<< HEAD
-INSERT INTO `Car` VALUES ('dd1234','pink','2019-03-13',1,1254654557777),('กก1234','แดง','2018-09-10',2,1231231231231);
-=======
-INSERT INTO `Car` VALUES ('dd1458','sadfd','2019-05-14',6,12314564653),('ดด1234','Green','1995-05-19',1,12314564653);
->>>>>>> afd61683980d42b96cb868b5878ca88aae254efd
+INSERT INTO `Car` VALUES ('กก1234','แดง','2018-09-10',2,1254654557777),('งง5555','ดำ','2017-01-12',3,1574951437777),('ออ1111','เทา','2019-05-07',4,1112221111119);
 /*!40000 ALTER TABLE `Car` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -107,7 +103,7 @@ CREATE TABLE `Case` (
   KEY `case_station_foreign` (`Station`),
   CONSTRAINT `case_ownercar_foreign` FOREIGN KEY (`OwnerCar`) REFERENCES `Car` (`Car_Licence`),
   CONSTRAINT `case_station_foreign` FOREIGN KEY (`Station`) REFERENCES `PoliceStation` (`Station_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -116,6 +112,7 @@ CREATE TABLE `Case` (
 
 LOCK TABLES `Case` WRITE;
 /*!40000 ALTER TABLE `Case` DISABLE KEYS */;
+INSERT INTO `Case` VALUES (1,'ชนแล้วหนี','jane',813262352,'กก1234',1,'2019-05-12 13:09:46');
 /*!40000 ALTER TABLE `Case` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -134,7 +131,7 @@ CREATE TABLE `PoliceStation` (
   `Station_Phone` double NOT NULL,
   `Station_Address` char(150) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`Station_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -143,6 +140,7 @@ CREATE TABLE `PoliceStation` (
 
 LOCK TABLES `PoliceStation` WRITE;
 /*!40000 ALTER TABLE `PoliceStation` DISABLE KEYS */;
+INSERT INTO `PoliceStation` VALUES (1,'สภ.แสนสุข','ชลบุรี',20130,191,'ถนนบางแสนสาย 2 ตำบลแสนสุข อำเภอเมือง'),(2,'สภ.แหลมฉบัง','ชลบุรี',20230,38490555,'98 ม.10 ต.ทุ่งสุขลา อ.ศรีราชา');
 /*!40000 ALTER TABLE `PoliceStation` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -172,11 +170,7 @@ CREATE TABLE `Users` (
 
 LOCK TABLES `Users` WRITE;
 /*!40000 ALTER TABLE `Users` DISABLE KEYS */;
-<<<<<<< HEAD
-INSERT INTO `Users` VALUES (1231231231231,'Grim','Sann','1999-06-16','ไทย','ชลบุรี',20130,'11/74 ม.11 ต.แสนสุข อ.เมือง'),(1254654557777,'Timmy','jett','1995-05-19','ไทย','ชลบุรี',20130,'14/11 ม.2 ต.แสนสุข อ.เมือง');
-=======
-INSERT INTO `Users` VALUES (1231564654,'efsdffsd','gbfgbfg','2019-05-14','thai','tin',1554,'dfggsfhsgafdssdfsdfds'),(5282752424,'gdgfsdf','gbfgbfg','2019-05-23','thai','tin',2165,'dfggsfhsgafdssdfsdfds'),(6354245245,'efsdffsd','tttt','2019-05-17','thai','tin',2165,'dfggsfhsgafdssdfsdfds'),(11545616545,'sdfsdfsdf','bgnsgsfdgdfs','2019-05-22','ty','tin',2165,'dfggsfhsgafdssdfsdfds'),(12314564653,'werssds','ttttdfgdf','2019-05-13','ty','tin',2165,'dfggsfhsgafds'),(16515126125,'fhrtgsfd','hdfghsfg','2019-05-17','thai','tin',2165,'dfggsfhsgafds'),(123156465489,'sdfsdfsdf','gbfgbfg','2019-05-16','ty','tin',2165,'dfggsfhsgafdssdfsdfds'),(123456465465,'wegdfgsdf','dgeshaer','2019-05-17','thai','tin',2165,'dfggsfhsgafdssdfsdfds'),(1142356465455,'er','tttt','2019-05-23','thai','tin',2165,'dfggsfhsgafds'),(1234567894555,'Timmy','Yell','2019-05-08','Thailand','Bangkok',11520,'dfhdsfgdafdsafdfgfds');
->>>>>>> e38c7e7d820e66cfd892c29fa20baf6adefc2793
+INSERT INTO `Users` VALUES (1112223333,'jame','jo','1999-10-05','ไทย','ชลบุรี',20130,'10/5 ต.แสนสุข อ.เมือง'),(1112221111119,'jo','jo','2013-06-11','ไทย','ชลบุรี',20130,'20/20 บางแสน'),(1231231231231,'Grim','Sann no','1999-06-16','ไทย','กระบี่',20130,'11/74 ม.11 ต.แสนสุข อ.เมือง'),(1254654557777,'Timmy','jett','1995-05-19','ไทย','ชลบุรี',20130,'14/11 ม.2 ต.แสนสุข อ.เมือง'),(1574951437777,'Watt','Roeat','1999-05-05','ไทย','ชลบุรี',20130,'21/35 ม.5 ต.แสนสุข อ.เมือง');
 /*!40000 ALTER TABLE `Users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -269,12 +263,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
--- Dump completed on 2019-05-05 16:43:44
-=======
--- Dump completed on 2019-05-05 16:37:42
->>>>>>> e38c7e7d820e66cfd892c29fa20baf6adefc2793
-=======
--- Dump completed on 2019-05-06  8:45:43
->>>>>>> afd61683980d42b96cb868b5878ca88aae254efd
+-- Dump completed on 2019-05-12 13:25:13

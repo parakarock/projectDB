@@ -39,7 +39,7 @@ CREATE TABLE `Brand` (
   `Brand_Motor` char(150) COLLATE utf8_unicode_ci NOT NULL,
   `Brand_Gas` char(150) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`Brand_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -48,7 +48,7 @@ CREATE TABLE `Brand` (
 
 LOCK TABLES `Brand` WRITE;
 /*!40000 ALTER TABLE `Brand` DISABLE KEYS */;
-INSERT INTO `Brand` VALUES (1,'Toyota','Toyota Vios 1.5 Entry My19 วีออส',2019,'รถเก๋ง 4 ประตู','เครื่องยนต์ 1,496 cc., ขับเคลื่อนล้อหน้า, เกียร์ออโต้แบบ CVT (พร้อม Sequential Shift)','เบนซิน 95, เบนซิน 91, แก๊สโซฮอล์ 95 (E10), แก๊สโซฮอล์ 91, เบนซิน E20, เบนซิน E85'),(2,'Mercedes-benz','Mercedes-benz S-Class S 350 d Exclusive เอส-คลาส',2019,'รถเก๋ง 4 ประตู, รถไฮบริด','เครื่องยนต์ 2,925 cc., ขับเคลื่อนล้อหลัง, เกียร์อัตโนมัติ 9AT (9G-Tronic)','ดีเซล');
+INSERT INTO `Brand` VALUES (1,'Toyota','Toyota Vios 1.5 Entry My19 วีออส',2019,'รถเก๋ง 4 ประตู','เครื่องยนต์ 1,496 cc., ขับเคลื่อนล้อหน้า, เกียร์ออโต้แบบ CVT (พร้อม Sequential Shift)','เบนซิน 95, เบนซิน 91, แก๊สโซฮอล์ 95 (E10), แก๊สโซฮอล์ 91, เบนซิน E20, เบนซิน E85'),(2,'Mercedes-benz','Mercedes-benz S-Class S 350 d Exclusive เอส-คลาส',2019,'รถเก๋ง 4 ประตู, รถไฮบริด','เครื่องยนต์ 2,925 cc., ขับเคลื่อนล้อหลัง, เกียร์อัตโนมัติ 9AT (9G-Tronic)','ดีเซล'),(3,'BMW','BMW Series 3 320d Sport MY19 ซีรีส์3',2019,'รถเก๋ง 4 ประตู','เครื่องยนต์ 1,995 cc., ขับเคลื่อนล้อหลัง, เกียร์ออโต้ 8AT (พร้อม Steptronic Sport)','ดีเซล, ไบโอดีเซล B5'),(4,'Mercedes-benz','Mercedes-benz S-Class S 350 d Exclusive เอส-คลาส',2018,'รถเก๋ง 4 ประตู, รถไฮบริด','เครื่องยนต์ 2,925 cc., ขับเคลื่อนล้อหลัง, เกียร์อัตโนมัติ 9AT (9G-Tronic)','ดีเซล'),(5,'Mercedes-benz','Mercedes-benz S-Class S 350 d Exclusive เอส-คลาส',2019,'รถเก๋ง 4 ประตู, รถไฮบริด','เครื่องยนต์ 2,925 cc., ขับเคลื่อนล้อหลัง, เกียร์อัตโนมัติ 9AT (9G-Tronic)','ดีเซล'),(6,'Toyota','Toyota Vios 1.5 Entry My19 วีออส',2019,'รถเก๋ง 4 ประตู','เครื่องยนต์ 1,496 cc., ขับเคลื่อนล้อหน้า, เกียร์ออโต้แบบ CVT (พร้อม Sequential Shift)','เบนซิน 95, เบนซิน 91, แก๊สโซฮอล์ 95 (E10), แก๊สโซฮอล์ 91, เบนซิน E20, เบนซิน E85'),(7,'ฟ','ฟ',2000,'ฟ','ฟ','ฟ'),(8,'Toyota','Toyota Vios 1.5 Entry My19 วีออส',2018,'รถเก๋ง 4 ประตู','เครื่องยนต์ 1,496 cc., ขับเคลื่อนล้อหน้า, เกียร์ออโต้แบบ CVT (พร้อม Sequential Shift)','ดีเซล'),(9,'Ford','Ford Ranger SWB 2.0L Turbo 4x2 6 MT MY18',2018,'รถกระบะ 2 ประตู (ตอนเดียว)','เครื่องยนต์ 1,996 cc., ขับเคลื่อนล้อหลัง, เกียร์ธรรมดา 6MT','ดีเซล, ไบโอดีเซล B5');
 /*!40000 ALTER TABLE `Brand` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -79,7 +79,7 @@ CREATE TABLE `Car` (
 
 LOCK TABLES `Car` WRITE;
 /*!40000 ALTER TABLE `Car` DISABLE KEYS */;
-INSERT INTO `Car` VALUES ('กก1234','แดง','2018-09-10',2,1231231231231);
+INSERT INTO `Car` VALUES ('กก1234','แดง','2018-09-10',2,1254654557777),('งง5555','ดำ','2017-01-12',3,1574951437777);
 /*!40000 ALTER TABLE `Car` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -103,7 +103,7 @@ CREATE TABLE `Case` (
   KEY `case_station_foreign` (`Station`),
   CONSTRAINT `case_ownercar_foreign` FOREIGN KEY (`OwnerCar`) REFERENCES `Car` (`Car_Licence`),
   CONSTRAINT `case_station_foreign` FOREIGN KEY (`Station`) REFERENCES `PoliceStation` (`Station_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -112,6 +112,7 @@ CREATE TABLE `Case` (
 
 LOCK TABLES `Case` WRITE;
 /*!40000 ALTER TABLE `Case` DISABLE KEYS */;
+INSERT INTO `Case` VALUES (1,'ชนแล้วหนี','jane',813262352,'กก1234',1,'2019-05-12 13:09:46'),(2,'เมาแล้วขับ','อัครวัตร',813262352,'งง5555',2,'2019-05-14 09:19:07');
 /*!40000 ALTER TABLE `Case` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -130,7 +131,7 @@ CREATE TABLE `PoliceStation` (
   `Station_Phone` double NOT NULL,
   `Station_Address` char(150) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`Station_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -139,6 +140,7 @@ CREATE TABLE `PoliceStation` (
 
 LOCK TABLES `PoliceStation` WRITE;
 /*!40000 ALTER TABLE `PoliceStation` DISABLE KEYS */;
+INSERT INTO `PoliceStation` VALUES (1,'สภ.แสนสุข','ชลบุรี',20130,191,'ถนนบางแสนสาย 2 ตำบลแสนสุข อำเภอเมือง'),(2,'สภ.แหลมฉบัง','ชลบุรี',20230,38490555,'98 ม.10 ต.ทุ่งสุขลา อ.ศรีราชา');
 /*!40000 ALTER TABLE `PoliceStation` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -168,7 +170,7 @@ CREATE TABLE `Users` (
 
 LOCK TABLES `Users` WRITE;
 /*!40000 ALTER TABLE `Users` DISABLE KEYS */;
-INSERT INTO `Users` VALUES (1231231231231,'Grim','Sann','1999-06-16','ไทย','ชลบุรี',20130,'11/74 ม.11 ต.แสนสุข อ.เมือง'),(1254654557777,'Timmy','jett','1995-05-19','ไทย','ชลบุรี',20130,'14/11 ม.2 ต.แสนสุข อ.เมือง');
+INSERT INTO `Users` VALUES (1112223333,'jame','jo','1999-10-05','ไทย','ชลบุรี',20130,'10/5 ต.แสนสุข อ.เมือง'),(100000100001,'Somsiri','Siri','1996-05-28','ไทย','ชลบุรี',20130,'45/5 ต.แสนสุข อ.เมือง'),(789789789789,'Nemofish','Ne','1999-08-05','ไทย','ชลบุรี',20130,'14/4 ต.แสนสุข อ.เมือง'),(1112221111119,'jo','jo','2013-06-11','ไทย','ชลบุรี',20130,'20/20 บางแสน'),(1231231231231,'Grim','Sann no','1999-06-16','ไทย','กระบี่',20130,'11/74 ม.11 ต.แสนสุข อ.เมือง'),(1233213216549,'Som','Siri','1999-08-06','ไทย','ชลบุรี',20130,'101/1 ต.แสนสุข อ.เมือง'),(1234567898745,'Green','Nemo','2004-06-16','ไทย','ชลบุรี',20130,'100/4 ต.แสนสุข อ.เมือง'),(1254654557777,'Timmy','jett','1995-05-19','ไทย','ชลบุรี',20130,'14/11 ม.2 ต.แสนสุข อ.เมือง'),(1574951437777,'Watt','Roeat','1999-05-05','ไทย','ชลบุรี',20130,'21/35 ม.5 ต.แสนสุข อ.เมือง');
 /*!40000 ALTER TABLE `Users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -261,4 +263,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-11 15:07:44
+-- Dump completed on 2019-05-14  9:37:19

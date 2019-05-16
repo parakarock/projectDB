@@ -28,12 +28,12 @@
 @section('head')
 
 <li class="nav-item active">
-    <a class="nav-link" href="/">หน้าแรก
+    <a class="nav-link" href="/"><i class="fa fa-home"></i> หน้าแรก
         <span class="sr-only">(current)</span>
     </a>
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="/case">แจ้งความ</a>
+    <a class="nav-link" href="/case"><i class="fa fa-pencil"></i> แจ้งความ </a>
 </li>
 @endsection
  
@@ -107,6 +107,7 @@
             <br>
             <a class="text" id='a'>วันที่แจ้ง : </a>
             <a class="text" id='b'> {{ $value->Case_Date }} </a>
+            <br>
 
             @endforeach @endif
             </div>

@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('css')
+
 <style>
 
     div.a { 
@@ -9,6 +10,9 @@
         font-size: 150%;
         color: #ECF0F1;
         }
+    /* .btn {
+        background-color: DodgerBlue
+    } */
 
     
 
@@ -19,12 +23,12 @@
 
 @section('head')
 <li class="nav-item active">
-    <a class="nav-link" href="/">หน้าแรก
+    <a class="nav-link" href="/"><i class="fa fa-home"></i> หน้าแรก
         <span class="sr-only">(current)</span>
     </a>
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="/case">แจ้งความ</a>
+    <a class="nav-link" href="/case"><i class="fa fa-pencil"></i> แจ้งความ </a>
 </li>
 @endsection
 

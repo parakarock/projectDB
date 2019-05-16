@@ -2,6 +2,7 @@
 @section('css')
 <style>
     div.a { 
+        /* font-style: ChulaNarak; */
         font-size: 150%;
         color:#ffffff; }
 
@@ -18,12 +19,12 @@
 
 @section('head')
 <li class="nav-item active">
-    <a class="nav-link" href="/">หน้าแรก
+    <a class="nav-link" href="/"><i class="fa fa-home"></i> หน้าแรก
         <span class="sr-only">(current)</span>
     </a>
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="/case">แจ้งความ</a>
+    <a class="nav-link" href="/case"><i class="fa fa-pencil"></i> แจ้งความ </a>
 </li>
 @endsection
  
@@ -45,7 +46,9 @@
                             {{ csrf_field() }}
                             <div class="card-body row no-gutters align-items-center">
                                 <div class="col-auto">
-                                    <i class="fas fa-search h4 text-body"></i>
+                                    <!-- <i class="fas fa-search h4 text-body"></i> -->
+                                   
+
                                 </div>
                                 <!--end of col-->
                                 <div class="col">
@@ -53,7 +56,7 @@
                                 </div>
                                 <!--end of col-->
                                 <div class="col-auto">
-                                    <button class="btn btn-lg btn-success" type="submit">Search</button>
+                                    <button class="btn btn-lg btn-success" type="submit">Search  <i class="fas fa-search"></i> </button>
                                 </div>
                                 <!--end of col-->
                             </div>
@@ -90,7 +93,8 @@
                         <td>{{ $row->Car_Licence }}</td>
                         <td>{{ $row->Car_Color }}</td>
                         <td>{{ $row->Brand_Name }}</td>
-                        <td><a href="{{ route('home.edit',$row->Car_Licence) }}" class="btn btn-warning">รายละเอียด</a></td>
+                        <td><a href="{{ route('home.edit',$row->Car_Licence) }}" class="btn btn-warning"><i class="fa fa-list"></i> รายละเอียด </a></td>
+                        
                     </tr>
                 </tbody>
                 @endforeach
@@ -117,7 +121,7 @@
                         <td>{{ $row->Car_Licence }}</td>
                         <td>{{ $row->Car_Color }}</td>
                         <td>{{ $row->Brand_Name }}</td>
-                        <td><a href="{{ route('home.edit',$row->Car_Licence) }}" class="btn btn-warning">รายละเอียด</a></td>
+                        <td><a href="{{ route('home.edit',$row->Car_Licence) }}" class="btn btn-warning"><i class="fa fa-list"></i> รายละเอียด </a></td>
                     </tr>
                 </tbody>
                 @endforeach
