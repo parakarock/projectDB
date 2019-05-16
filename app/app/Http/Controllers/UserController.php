@@ -68,8 +68,15 @@ class UserController extends Controller
              $this->validate($request, $rules, $customMessages);
 
 
-         
-    
+        $co = DB::table('Users')
+                     ->select('User_Citizen')
+                     ->where('User_Citizen', '=', $request->get('User_Citizen'))
+                     ->get();
+        
+        $countofopps = count($co);
+        if ( $countofopps > 0) {
+            return back()->with('error', 'รหัสบัตรประชาชนซ้ำ กรุณากรอกใหม่!');
+        }
         $owner = new Users;
         $owner->User_Citizen = $request->get('User_Citizen');
         $owner->User_Name = $request->get('User_Name');
@@ -80,16 +87,9 @@ class UserController extends Controller
         $owner->User_Post = $request->get('User_Post');
         $owner->User_Address = $request->get('User_Address');
         $owner->save(); 
-        
-        $data = DB::table('Car')
-                ->join('Brand','Brand.Brand_ID','=','Car.Brand')
-                ->select('Car.Car_Licence','Car.Car_Color','Brand.Brand_Name')
-                ->get();
 
-        
         return back()->with('success', 'บันทึกข้อมูลเจ้าของรถสำเร็จ!');
-        return view('home.all',compact('data'));
-        
+    
     }
 
     /**

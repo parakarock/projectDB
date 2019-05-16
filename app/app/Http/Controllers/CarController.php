@@ -62,7 +62,15 @@ class CarController extends Controller
             ];
          $this->validate($request, $rules, $customMessages);
 
+        $co = DB::table('Car')
+                     ->select('Car_Licence')
+                     ->where('Car_Licence', '=', $request->get('Car_Licence'))
+                     ->get();
         
+        $countofopps = count($co);
+        if ( $countofopps > 0) {
+            return back()->with('error', 'เลขทะเบียนรถซ้ำ กรุณากรอกใหม่!');
+        }
         $car = new Car;
         $car->Car_Licence = $request->get('Car_Licence');
         $car->Car_Color = $request->get('Car_Color');
@@ -187,15 +195,19 @@ class CarController extends Controller
      */
     public function destroy($id)
     {
+        $co = DB::table('Case')
+                     ->select(DB::raw('count(*) as ddd'))
+                     ->where('OwnerCar', '=', $id)
+                     ->get();
+        $s = json_decode($co);
+        
+        if ( $s > 0) {
+        DB::table('Case')->where('OwnerCar', '=', $id)->delete();
+        }
         
         DB::delete('delete from Car where Car_Licence = ?',[$id]);
+        return redirect('all')->with('success', 'ลบข้อมูลสำเร็จ!');
 
-        $data = DB::table('Car')
-                ->join('Brand','Brand.Brand_ID','=','Car.Brand')
-                ->select('Car.Car_Licence','Car.Car_Color','Brand.Brand_Name')
-                ->get();
-
-       return view('home.all',compact('data')); 
        
     }
 }

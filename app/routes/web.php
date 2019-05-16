@@ -22,6 +22,7 @@ Route::get('/','HomeController@index');
 
 Route::get('all','HomeController@index2');
 Route::get('case','CaseController@index');
+Route::get('welcome','HomeController@index');
 
 
 Route::any('/search',function(){

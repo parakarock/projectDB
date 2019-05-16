@@ -13,6 +13,9 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -25,11 +28,20 @@
 
     <style>
         body {
-	        background: url('https://i.pinimg.com/originals/58/b9/1e/58b91ecf69cc7b00b89a98d6700b67a8.jpg');
-	        background-size: 100%;
-            }
+            background: url('https://i.pinimg.com/originals/58/b9/1e/58b91ecf69cc7b00b89a98d6700b67a8.jpg');
+            background-size: 100%;
+        }
     </style>
-
+    <script>
+        $(document).ready(function(){
+    $(".delete").on("submit", function(){
+        return confirm("Are you sure?");
+        
+    });
+    
+});
+      
+    </script>
 
 </head>
 
@@ -37,11 +49,11 @@
 <body>
 
     <div id="app">
-       
+
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-laravel">
-             
+
             <div class="container">
-                
+
                 <a class="navbar-brand js-scroll-trigger" href="{{ url('/') }}">
                     {{ config('app.name', 'car') }}
                 </a>
@@ -50,13 +62,13 @@
                     aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                    
+
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         @yield('head')
                     </ul>
-                        
+
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
@@ -94,8 +106,8 @@
         </nav>
 
         <main class="py-4">
-            @include('flash-message')
-            @yield('content')   
+            @yield('flash-message')
+            @yield('content')
         </main>
 
     </div>
