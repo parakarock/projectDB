@@ -166,9 +166,10 @@
             <br>
             <a class="text" id='a'>วันที่แจ้ง : </a>
             <a class="text" id='b'> {{ $value->Case_Date }} </a>
-            </div>
-
+            <br>
+            
             @endforeach @endif
+            </div>
         </div>
 
 
