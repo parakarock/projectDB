@@ -155,6 +155,7 @@
             </form>
 
             <br>
+            <div class="text-left">
             <p class="lead">
                 ====================================================================================================</p>
             <h2>------คดี------</h2>
@@ -165,6 +166,7 @@
             <br>
             <a class="text" id='a'>วันที่แจ้ง : </a>
             <a class="text" id='b'> {{ $value->Case_Date }} </a>
+            </div>
 
             @endforeach @endif
         </div>

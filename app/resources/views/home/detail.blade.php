@@ -93,7 +93,7 @@
                     <a class="text" id='a'>ประเทศ : </a>
                     <a class="text" id='b'> {{ $value->User_Country }} </a>
                     <br>
-                    <a class="text" id='a'>จังหวัด : {{ $value->User_Province }}</a>
+                    <a class="text" id='a'>จังหวัด : </a>
                     <a class="text" id='b'> {{ $value->User_Province }} </a>
                     <br>
                     <a class="text" id='a'>รหัสไปรษณีย์ : </a>

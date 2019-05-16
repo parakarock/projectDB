@@ -63,7 +63,7 @@
                                 {{ csrf_field() }}
                                 <div class="card-body row no-gutters align-items-center">
                                     <div class="col-auto">
-                                        <i class="fas fa-search h4 text-body"></i>
+                                        <!-- <i class="fas fa-search h4 text-body"></i> -->
                                     </div>
                                     <!--end of col-->
                                     <div class="col">
@@ -72,7 +72,7 @@
                                     </div>
                                     <!--end of col-->
                                     <div class="col-auto">
-                                        <button class="btn btn-lg btn-success" type="submit">Search </button>
+                                        <button class="btn btn-lg btn-success" type="submit"> Search <i class="fas fa-search"></i></button>
                                     </div>
                                     <!--end of col-->
 
