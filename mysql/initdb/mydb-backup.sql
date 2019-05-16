@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 -- MySQL dump 10.13  Distrib 5.7.26, for Linux (x86_64)
 --
 -- Host: localhost    Database: laravel
@@ -264,3 +266,4 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2019-05-14  9:37:19
+>>>>>>> 09cd1ce9ff6ed73abd03e11a73fa2559b583f0c1

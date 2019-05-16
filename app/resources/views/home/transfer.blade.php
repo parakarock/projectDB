@@ -73,8 +73,10 @@
                             <label for="User" style="color: #F4D03F; font-size: 150%" >เลือกเจ้าของใหม่ : </label>
                             <div class="col-sm-5">
                             <select name="User" class="form-control">
-                                @foreach($users as $row) 
+                                @foreach($users as $row)
+                                @if ( $row->User_Citizen !== $value->User_Citizen )
                                 <option value="{{ $row->User_Citizen }}">{{ $row->User_Citizen }}</option>
+                                @endif
                                 @endforeach
                             </select>
                             </div>

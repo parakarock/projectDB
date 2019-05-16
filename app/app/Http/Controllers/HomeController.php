@@ -123,8 +123,14 @@ class HomeController extends Controller
                 ->get();
         $case = DB::table('Case')
                 ->join('Car','Car.Car_Licence','=','Case.OwnerCar')
+                ->join('PoliceStation','PoliceStation.Station_ID','=','Case.Station')
                 ->select('Case.Case_Detail',
-                        'Case.Case_Date')
+                        'Case.Case_Date',
+                        'PoliceStation.Station_Name',
+                        'PoliceStation.Station_Province',
+                        'PoliceStation.Station_Post',
+                        'PoliceStation.Station_Phone',
+                        'PoliceStation.Station_Address')
                 ->where('Case.OwnerCar',$id)
                 ->get();
         

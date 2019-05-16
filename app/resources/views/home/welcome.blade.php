@@ -36,7 +36,9 @@
             <div class='a'>
                 <h1 class="mt-5">ค้นหาเจ้าของรถ</h1>
 
-                <p class="lead">====================================================================================================</p>
+                <p class="lead">
+                    ====================================================================================================
+                </p>
                 <div class="containe">
                     <div class="row">
                         <div class="col-10 col-sm-8 col-md-10">
@@ -50,11 +52,13 @@
                                     </div>
                                     <!--end of col-->
                                     <div class="col">
-                                        <input class="form-control form-control-lg form-control-borderless" name="q" type="search" placeholder="ทะเบียนรถ">
+                                        <input class="form-control form-control-lg form-control-borderless" name="q"
+                                            type="search" placeholder="ทะเบียนรถ">
                                     </div>
                                     <!--end of col-->
                                     <div class="col-auto">
-                                        <button class="btn btn-lg btn-success" type="submit">Search <i class="fas fa-search"></i> </button>
+                                        <button class="btn btn-lg btn-success" type="submit">Search <i
+                                                class="fas fa-search"></i> </button>
                                     </div>
                                     <!--end of col-->
                                 </div>
@@ -64,7 +68,8 @@
                         <div class="col-2">
                             <div class="text-right">
 
-                                <a class="btn btn-primary" href="/all" style="padding:20px 50px; margin-top: 15px;">ข้อมูลทั้งหมด</a>
+                                <a class="btn btn-primary" href="/all"
+                                    style="padding:20px 50px; margin-top: 15px;">ข้อมูลทั้งหมด</a>
                             </div>
                         </div>
                     </div>
@@ -91,7 +96,8 @@
                             <td>{{ $row->Car_Licence }}</td>
                             <td>{{ $row->Car_Color }}</td>
                             <td>{{ $row->Brand_Name }}</td>
-                            <td><a href="{{ route('home.edit',$row->Car_Licence) }}" class="btn btn-warning"><i class="fa fa-list"></i> รายละเอียด </a></td>
+                            <td><a href="{{ route('home.edit',$row->Car_Licence) }}" class="btn btn-warning"><i
+                                        class="fa fa-list"></i> รายละเอียด </a></td>
 
                         </tr>
                     </tbody>
@@ -119,7 +125,8 @@
                             <td>{{ $row->Car_Licence }}</td>
                             <td>{{ $row->Car_Color }}</td>
                             <td>{{ $row->Brand_Name }}</td>
-                            <td><a href="{{ route('home.edit',$row->Car_Licence) }}" class="btn btn-warning"><i class="fa fa-list"></i> รายละเอียด </a></td>
+                            <td><a href="{{ route('home.edit',$row->Car_Licence) }}" class="btn btn-warning"><i
+                                        class="fa fa-list"></i> รายละเอียด </a></td>
                         </tr>
                     </tbody>
                     @endforeach
